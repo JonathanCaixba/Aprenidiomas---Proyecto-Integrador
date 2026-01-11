@@ -251,7 +251,9 @@ nav a.ul-active {
 /* Texto derecha */
 .panel-1-text {
     display: block;
-    padding: 30px 50px;
+    padding-right: 8rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
     color: white;
     position: relative;
 }
@@ -276,6 +278,52 @@ nav a.ul-active {
 .panel-1-text p {
     margin-bottom: 1.5rem;
 }
+
+/* Icono y animación de Aprenidiomas */
+.icon {
+    position: absolute;
+    animation: fadeInBounce 2s ease-in-out;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.icon:hover {
+    transform: scale(1.15) rotate(8deg);
+}
+
+.icon-logo {
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 240px;
+    animation: waveIn 1.2s ease-out;
+}
+
+@keyframes waveIn {
+
+    /* Ondulación (para el icono del logo) */
+    0% {
+        opacity: 0;
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+/* FIN Icono y animación de Aprenidiomas */
 
 /* --- FIN Panel 1 --- */
 
