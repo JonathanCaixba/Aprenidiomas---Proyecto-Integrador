@@ -1,0 +1,184 @@
+/* Variables para la paleta de colores (Home) */
+:root {
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--light-yellow);
+    --blue-marine: #2a3b8f;
+}
+
+/* Estilos globales */
+html, body {
+    font-family: 'Geom', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-logo {
+    animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Geom', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a.ul-active {
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Cursos */
+.btn-courses {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-courses:hover {
+    background-color: var(--pink-shadow);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* --- FIN Navbar --- */
