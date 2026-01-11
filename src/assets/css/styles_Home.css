@@ -1,0 +1,725 @@
+/* Variables para la paleta de colores (Home) */
+:root {
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--light-yellow);
+    --blue-marine: #2a3b8f;
+}
+
+/* Estilos globales */
+html, body {
+    font-family: 'Geom', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-logo {
+    animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Geom', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a.ul-active {
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Cursos */
+.btn-courses {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-courses:hover {
+    background-color: var(--pink-shadow);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* --- FIN Navbar --- */
+
+/* --- Sección Panel 1 --- */
+.word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 0.25em;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    animation: letter-in 0.5s ease forwards;
+}
+
+@keyframes letter-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-1 {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-bottom: 6%;
+    background: var(--teal);
+    min-height: 500px;
+
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 85%,
+            100% 100%,
+            0 70%);
+    overflow: visible;
+    /* Permite que iconos salgan si es necesario */
+}
+
+/* Contenidos del panel*/
+.panel-1-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+/* Imagen izquierda */
+.panel-1-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.panel-1-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto derecha */
+.panel-1-text {
+    display: block;
+    padding-right: 8rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
+    color: white;
+    position: relative;
+}
+
+.panel-1-text h1 {
+    font-family: 'gang of three', cursive;
+    font-size: 4.8rem;
+    margin-bottom: 0.5rem;
+    margin-top: auto;
+    line-height: 1.1;
+    text-align: left;
+    display: block;
+    color: var(--light-green);
+    text-shadow:
+        2px 4px 0px var(--pink-shadow),
+        4px 5px 0px var(--pink-shadow),
+        6px 6px 0px rgba(0, 0.3, 0.3, 0.3);
+
+    letter-spacing: 2px;
+}
+
+.panel-1-text p {
+    margin-bottom: 1.5rem;
+}
+
+/* Icono y animación de Aprenidiomas */
+.icon {
+    position: absolute;
+    animation: fadeInBounce 2s ease-in-out;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.icon:hover {
+    transform: scale(1.15) rotate(8deg);
+}
+
+.icon-logo {
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 240px;
+    animation: waveIn 1.2s ease-out;
+}
+
+@keyframes waveIn {
+
+    /* Ondulación (para el icono del logo) */
+    0% {
+        opacity: 0;
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-15deg);
+    }
+
+    75% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+/* FIN Icono y animación de Aprenidiomas */
+
+/* --- FIN Panel 1 --- */
+
+/* --- Sección de Información (Paneles 2 y 3) --- */
+.info-section {
+    display: flex;
+    width: 100%;
+    min-height: auto;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 4rem;
+    margin-bottom: 5rem;
+
+    /* Esto hace que la diagonal caiga mucho más fuerte hacia la derecha */
+    clip-path: polygon(0 10%,
+            /* Arriba a la izquierda */
+            100% 12rem,
+            /* Derecha */
+            100% 100%,
+            0 100%);
+    margin-top: -8rem;
+    z-index: 2;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Panel Rosa (Estadísticas) --- */
+.panel-stats {
+    background-color: var(--light-pink);
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 2rem 3rem 2rem;
+    gap: 2rem;
+    border-radius: none;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.stat-number {
+    font-family: 'Midorima - Personal Use', cursive;
+    font-size: 3.5rem;
+    color: #2a3b8f;
+    line-height: 1;
+    min-width: 80px;
+    text-align: right;
+}
+
+.stat-text {
+    font-family: 'Geom', sans-serif;
+    font-size: 1.5rem;
+    color: #2a3b8f;
+    line-height: 1.3;
+}
+
+/* --- Panel Amarillo (Comunidad) --- */
+.panel-community {
+    background-color: var(--yellow);
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem 4rem 2rem;
+    text-align: center;
+    border-radius: none;
+}
+
+.community-content h2 {
+    font-family: 'Geom', sans-serif;
+    color: var(--white);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.community-content .highlight-text {
+    font-family: 'gang of three', cursive;
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.btn-community {
+    background-color: var(--pink);
+    color: white;
+    font-family: 'Geom', sans-serif;
+    font-size: 1rem;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px 20px 20px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-community:hover {
+    background-color: #b84660;
+    transform: scale(1.05);
+}
+
+/* --- FIN Sección de Información (Paneles 2 y 3) --- */
+
+/* --- Panel 4 --- */
+
+/* sección para los estilos del panel 4 (Testimonios o CTA final) */
+
+/* --- FIN Panel 4 --- */
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.main-footer a {
+    color: var(--blue-marine);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+    color: var(--teal);
+}
+
+/* --- FIN Footer --- */
+
+/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
+
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+    .mobile-actions {
+        display: flex;
+        /* O block, según prefieras */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        /* Separación de los links */
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        /* Línea separadora elegante */
+        gap: 1.5rem;
+    }
+
+    /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+    .desktop-actions {
+        display: none;
+    }
+
+    /* Ajuste visual para los iconos en móvil */
+    .mobile-icons {
+        font-size: 1.8rem;
+        gap: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* 3. Overlay (Fondo oscuro) */
+.menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- FIN Responsividad Navbar --- */
+
+/* BORRADOR DE RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) */
+/* Sección Paneles 1, 2 y 3 */
+@media (max-width: 767px) {
+
+    /* PANEL 1 */
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        padding-bottom: 3rem;
+    }
+
+    .panel-1-content {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-1-image {
+        height: 240px;
+    }
+
+    .panel-1-text {
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .panel-1-text h1 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .panel-1-text p {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .icon-logo {
+        position: static;
+        width: 140px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+
+    /* PANEL 2 Y 3 */
+    .info-section {
+        flex-direction: column;
+        clip-path: none;
+        margin-top: -4rem;
+        gap: 0;
+    }
+
+    .panel-stats {
+        padding: 4rem 1.5rem;
+    }
+
+    .stat-item {
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-text {
+        font-size: 1.2rem;
+    }
+
+    .panel-community {
+        padding: 4rem 1.5rem 5rem;
+    }
+
+    .community-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 2.8rem;
+    }
+
+    .btn-community {
+        font-size: 1rem;
+        padding: 14px 36px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        padding-bottom: 4rem;
+    }
+
+    .panel-1-text {
+        padding-right: 6rem;
+    }
+
+    .panel-1-text h1 {
+        font-size: 3.4rem;
+        max-width: 480px;
+    }
+
+    .icon-logo {
+        top: 2rem;
+        right: 1.5rem;
+        width: 100px;
+    }
+
+    .info-section {
+        flex-direction: row;
+        margin-top: -6rem;
+    }
+
+    .panel-stats,
+    .panel-community {
+        padding: 6rem 2rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 3.2rem;
+    }
+}
+/* --- FIN Responsividad Paneles 1, 2 y 3--- */
