@@ -1,4 +1,3 @@
-/* Variables para la paleta de colores (Home) */
 :root {
     --light-yellow: #f1e3b4;
     --white: #ffffff;
@@ -17,30 +16,13 @@
 }
 
 /* Estilos globales */
-body {
+html, body {
     font-family: 'Geom', sans-serif;
-    background-color: #ffffff;
+    background-color: var(--background);
     color: var(--black);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-}
-
-/* Estilos del título con animación de letras */
-
-
-p,
-a {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--white);
-}
-
-/* Estilos proximos Todavia no se usa un h2 */
-.quotes,
-h2 {
-    font-family: 'samurai blast', cursive;
-    color: var(--teal);
 }
 
 /* --- Navbar --- */
@@ -60,6 +42,24 @@ h2 {
     z-index: 1000;
     width: 100%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
 }
 
 /* Animación de rebote del Logo */
@@ -182,51 +182,7 @@ nav a.ul-active {
 
 /* --- FIN Navbar --- */
 
-/* --- Fish Asian Sticker Animación --- */
-.fish-asian-sticker {
-    position: absolute;
-    top: 25%;
-    bottom: 86%;
-    left: 50%;
-
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.3s ease;
-    z-index: 999;
-}
-
-/* Tamaño */
-.fish-asian-sticker img {
-    width: 60px;
-    height: auto;
-    display: block;
-
-    transform-origin: center center;
-
-    animation: fish-spin 4s linear infinite;
-    animation-play-state: paused;
-}
-
-.fish-asian-sticker:hover {
-    transform: translate(-50%, -50%) scale(1.3);
-}
-
-.fish-asian-sticker:hover img {
-    animation-play-state: running;
-}
-
-@keyframes fish-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* --- FIN Fish Asian Sticker Animación --- */
-
-/* --- Panel 1 --- */
+/* --- Sección Panel 1 --- */
 .word {
     display: inline-block;
     white-space: nowrap;
@@ -294,7 +250,9 @@ nav a.ul-active {
 /* Texto derecha */
 .panel-1-text {
     display: block;
-    padding: 30px 50px;
+    padding-right: 8rem;
+    padding-left: 3rem;
+    padding-top: 2rem;
     color: white;
     position: relative;
 }
@@ -320,77 +278,28 @@ nav a.ul-active {
     margin-bottom: 1.5rem;
 }
 
-.buttons {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn-primary {
-    background-color: var(--teal);
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 20px;
-}
-
-.btn-secondary {
-    background-color: var(--yellow);
-    color: var(--black);
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 20px;
-}
-
-/* Iconos SVG flotantes con animaciones */
+/* Icono y animación de Aprenidiomas */
 .icon {
     position: absolute;
-    width: 80px;
     animation: fadeInBounce 2s ease-in-out;
     transition: transform 0.3s ease;
-    z-index: 1;
+    z-index: 2;
 }
 
 .icon:hover {
-    transform: scale(1.2) rotate(10deg);
-    /* Animación al hover */
+    transform: scale(1.15) rotate(8deg);
 }
 
-/* Animaciones únicas para cada icono */
-@keyframes bounceIn {
-
-    /* Rebote como entrada (para ramen) */
-    0% {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.5);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translateY(10px) scale(1.1);
-    }
-
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes spinIn {
-
-    /* Giro de entrada (para samurai) */
-    0% {
-        opacity: 0;
-        transform: rotate(-180deg) scale(0.5);
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
+.icon-logo {
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 240px;
+    animation: waveIn 1.2s ease-out;
 }
 
 @keyframes waveIn {
 
-    /* Ondulación (para gato maneki-neko y el icono del logo) */
+    /* Ondulación (para el icono del logo) */
     0% {
         opacity: 0;
         transform: rotate(0);
@@ -413,118 +322,7 @@ nav a.ul-active {
         transform: rotate(0);
     }
 }
-
-@keyframes foldIn {
-
-    /* Despliegue (para origami) */
-    0% {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-}
-
-@keyframes flagWave {
-
-    /* Ondear bandera */
-    0% {
-        opacity: 0;
-        transform: skewY(0);
-    }
-
-    20% {
-        transform: skewY(5deg);
-    }
-
-    40% {
-        transform: skewY(-5deg);
-    }
-
-    60% {
-        transform: skewY(5deg);
-    }
-
-    80% {
-        transform: skewY(-5deg);
-    }
-
-    100% {
-        opacity: 1;
-        transform: skewY(0);
-    }
-}
-
-@keyframes floatIn {
-
-    /* Flotación suave (para flores) */
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-
-    50% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Asignar animaciones y posiciones (En el panel 1) */
-.icon-noodle {
-    bottom: 25%;
-    left: 10%;
-    transform: rotate(-15deg);
-    animation: bounceIn 1.5s ease-in-out;
-}
-
-.icon-cat {
-    top: 3%;
-    right: 2%;
-    width: 100px;
-    animation: waveIn 1.8s ease-in-out;
-}
-
-.icon-samurai {
-    bottom: 15%;
-    left: 75%;
-    width: 90px;
-    animation: spinIn 1.2s ease-out;
-}
-
-.icon-logo {
-    top: 15%;
-    right: 3%;
-    width: 240px;
-    animation: waveIn 1.2s ease-out;
-}
-
-.icon-flower {
-    bottom: 40%;
-    left: 47%;
-    width: 60px;
-    animation: floatIn 2s ease-in-out;
-}
-
-.icon-origami {
-    top: 40%;
-    left: 30%;
-    width: 50px;
-    animation: foldIn 1s linear;
-}
-
-.icon-flag {
-    top: 20%;
-    right: 30%;
-    width: 70px;
-    animation: flagWave 2s ease-in-out;
-}
+/* FIN Icono y animación de Aprenidiomas */
 
 /* --- FIN Panel 1 --- */
 
@@ -641,6 +439,7 @@ nav a.ul-active {
 /* --- FIN Sección de Información (Paneles 2 y 3) --- */
 
 /* --- Panel 4 --- */
+
 .panel-4 {
     width: 100vw;
   background: var(--pink);
@@ -684,31 +483,6 @@ nav a.ul-active {
   font-weight: 800;
 }
 
-/*.panel-4-texto-derecha {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-transform: none;
-    text-align: center;
-}
-
-.panel-4-texto-derecha h2 {
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: white;
-    line-height: 1.2;
-}
-
-.panel-4-texto-derecha span {
-    display: block;
-    font-weight: 800;
-    letter-spacing: 1px;
-    font-family: 'gang of three', cursive;
-}*/
-
 .panel-4-profesores {
     display: flex;
     gap: 120px;
@@ -729,24 +503,6 @@ nav a.ul-active {
     object-fit: cover;
 }
 
-/* Texto debajo de imágenes panel 4 
-.profesor-name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #30317c;
-    margin: 0;
-    margin-top: 6px;
-    margin-bottom: 4px;
-}
-
-.sector-description {
-    font-size: 0.9rem;
-    line-height: 1.2;
-    opacity: 0.9;
-    margin-top: 4px;
-} */
-
-/* CONTENEDOR */
 .flip-card {
     width: 220px;
     height: 220px;
@@ -841,36 +597,9 @@ nav a.ul-active {
 }
 
 /* --- FIN Footer --- */
-.mobile-actions {
-    display: none;
-}
 
-/* 2. Mostramos las acciones de la barra superior */
-.desktop-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-/* Estilos responsivos */
-/* --- Estilos Base Navbar (Desktop First) --- */
-
-/* Ocultamos elementos móviles en desktop */
-.hamburger,
-.mobile-actions .menu-overlay {
-    display: none;
-}
-
-/* Navegación Desktop */
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* --- RESPONSIVIDAD NIVEL SENIOR (Tablet/Móvil) --- */
+/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
 @media (max-width: 992px) {
     .navbar {
         padding: 0.8rem 1.5rem;
@@ -951,7 +680,144 @@ nav a.ul-active {
         font-size: 1.1rem;
     }
 
-    /*panel 4 responsiveness */
+    /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+    .mobile-actions {
+        display: flex;
+        /* O block, según prefieras */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        /* Separación de los links */
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        /* Línea separadora elegante */
+        gap: 1.5rem;
+    }
+
+    /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+    .desktop-actions {
+        display: none;
+    }
+
+    /* Ajuste visual para los iconos en móvil */
+    .mobile-icons {
+        font-size: 1.8rem;
+        gap: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* 3. Overlay (Fondo oscuro) */
+.menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- FIN Responsividad Navbar --- */
+
+/* BORRADOR DE RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) */
+/* Sección Paneles 1, 2 y 3 */
+@media (max-width: 767px) {
+
+    /* PANEL 1 */
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        padding-bottom: 3rem;
+    }
+
+    .panel-1-content {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-1-image {
+        height: 240px;
+    }
+
+    .panel-1-text {
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .panel-1-text h1 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .panel-1-text p {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .icon-logo {
+        position: static;
+        width: 140px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+
+    /* PANEL 2 Y 3 */
+    .info-section {
+        flex-direction: column;
+        clip-path: none;
+        margin-top: -4rem;
+        gap: 0;
+    }
+
+    .panel-stats {
+        padding: 4rem 1.5rem;
+    }
+
+    .stat-item {
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-text {
+        font-size: 1.2rem;
+    }
+
+    .panel-community {
+        padding: 4rem 1.5rem 5rem;
+    }
+
+    .community-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 2.8rem;
+    }
+
+    .btn-community {
+        font-size: 1rem;
+        padding: 14px 36px;
+    }
+
+    /* panel 4 */
 
     .panel-4 {
         display: flex;
@@ -981,63 +847,42 @@ nav a.ul-active {
         text-align: center;
         font-size: 2.2rem;
     }
+}
 
-    /* Acciones dentro del menú móvil */
-    @media (max-width: 992px) {
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
 
-        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
-        .mobile-actions {
-            display: flex;
-            /* O block, según prefieras */
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 2rem;
-            /* Separación de los links */
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            /* Línea separadora elegante */
-            gap: 1.5rem;
-        }
-
-        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
-        .desktop-actions {
-            display: none;
-        }
-
-        /* Ajuste visual para los iconos en móvil */
-        .mobile-icons {
-            font-size: 1.8rem;
-            gap: 2rem;
-            display: flex;
-            justify-content: center;
-        }
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        padding-bottom: 4rem;
     }
 
-    .full-width {
-        width: 100%;
-        text-align: center;
+    .panel-1-text {
+        padding-right: 6rem;
     }
 
-    /* 3. Overlay (Fondo oscuro) */
-    .menu-overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(3px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s ease;
+    .panel-1-text h1 {
+        font-size: 3.4rem;
+        max-width: 480px;
     }
 
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
+    .icon-logo {
+        top: 2rem;
+        right: 1.5rem;
+        width: 100px;
+    }
+
+    .info-section {
+        flex-direction: row;
+        margin-top: -6rem;
+    }
+
+    .panel-stats,
+    .panel-community {
+        padding: 6rem 2rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 3.2rem;
     }
 }
-/* --- FIN RESPONSIVIDAD NAVBAR --- */
