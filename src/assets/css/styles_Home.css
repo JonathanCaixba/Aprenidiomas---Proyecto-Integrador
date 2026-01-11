@@ -547,8 +547,6 @@ nav a.ul-active {
         font-size: 1.1rem;
     }
 
-
-
     /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
     .mobile-actions {
         display: flex;
@@ -600,3 +598,128 @@ nav a.ul-active {
 }
 
 /* --- FIN Responsividad Navbar --- */
+
+/* BORRADOR DE RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) */
+/* Sección Paneles 1, 2 y 3 */
+@media (max-width: 767px) {
+
+    /* PANEL 1 */
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        padding-bottom: 3rem;
+    }
+
+    .panel-1-content {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-1-image {
+        height: 240px;
+    }
+
+    .panel-1-text {
+        text-align: center;
+        padding: 2rem 1.5rem;
+    }
+
+    .panel-1-text h1 {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .panel-1-text p {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .icon-logo {
+        position: static;
+        width: 140px;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+
+    /* PANEL 2 Y 3 */
+    .info-section {
+        flex-direction: column;
+        clip-path: none;
+        margin-top: -4rem;
+        gap: 0;
+    }
+
+    .panel-stats {
+        padding: 4rem 1.5rem;
+    }
+
+    .stat-item {
+        justify-content: center;
+    }
+
+    .stat-number {
+        font-size: 3rem;
+    }
+
+    .stat-text {
+        font-size: 1.2rem;
+    }
+
+    .panel-community {
+        padding: 4rem 1.5rem 5rem;
+    }
+
+    .community-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 2.8rem;
+    }
+
+    .btn-community {
+        font-size: 1rem;
+        padding: 14px 36px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .panel-1 {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        padding-bottom: 4rem;
+    }
+
+    .panel-1-text {
+        padding-right: 6rem;
+    }
+
+    .panel-1-text h1 {
+        font-size: 3.4rem;
+        max-width: 480px;
+    }
+
+    .icon-logo {
+        top: 2rem;
+        right: 1.5rem;
+        width: 100px;
+    }
+
+    .info-section {
+        flex-direction: row;
+        margin-top: -6rem;
+    }
+
+    .panel-stats,
+    .panel-community {
+        padding: 6rem 2rem;
+    }
+
+    .community-content .highlight-text {
+        font-size: 3.2rem;
+    }
+}
+/* --- FIN Responsividad Paneles 1, 2 y 3--- */
