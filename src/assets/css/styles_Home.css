@@ -951,6 +951,37 @@ nav a.ul-active {
         font-size: 1.1rem;
     }
 
+    /*panel 4 responsiveness */
+
+    .panel-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 20px;
+        gap: 24px;
+    }
+
+    
+    .panel-4-profesores {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .flip-card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imagen-profesor {
+        width: 180px;
+        height: 180px;
+    }
+
+    .panel-4-header h2 {
+        text-align: center;
+        font-size: 2.2rem;
+    }
+
     /* Acciones dentro del menú móvil */
     @media (max-width: 992px) {
 
