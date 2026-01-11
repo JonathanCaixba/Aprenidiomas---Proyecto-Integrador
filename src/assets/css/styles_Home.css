@@ -671,6 +671,14 @@ nav a.ul-active {
   text-align: center;
 }
 
+.panel-4 h1,
+.panel-4 h2,
+.panel-4 h3,
+.panel-4 p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .panel-4-header span {
   font-family: 'gang of three', cursive;
   font-weight: 800;
