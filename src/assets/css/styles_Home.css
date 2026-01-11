@@ -276,3 +276,143 @@ nav a.ul-active {
 .panel-1-text p {
     margin-bottom: 1.5rem;
 }
+
+/* --- FIN Panel 1 --- */
+
+/* --- Sección de Información (Paneles 2 y 3) --- */
+.info-section {
+    display: flex;
+    width: 100%;
+    min-height: auto;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 4rem;
+    margin-bottom: 5rem;
+
+    /* Esto hace que la diagonal caiga mucho más fuerte hacia la derecha */
+    clip-path: polygon(0 10%,
+            /* Arriba a la izquierda */
+            100% 12rem,
+            /* Derecha */
+            100% 100%,
+            0 100%);
+    margin-top: -8rem;
+    z-index: 2;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Panel Rosa (Estadísticas) --- */
+.panel-stats {
+    background-color: var(--light-pink);
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem 2rem 3rem 2rem;
+    gap: 2rem;
+    border-radius: none;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.stat-number {
+    font-family: 'Midorima - Personal Use', cursive;
+    font-size: 3.5rem;
+    color: #2a3b8f;
+    line-height: 1;
+    min-width: 80px;
+    text-align: right;
+}
+
+.stat-text {
+    font-family: 'Geom', sans-serif;
+    font-size: 1.5rem;
+    color: #2a3b8f;
+    line-height: 1.3;
+}
+
+/* --- Panel Amarillo (Comunidad) --- */
+.panel-community {
+    background-color: var(--yellow);
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem 4rem 2rem;
+    text-align: center;
+    border-radius: none;
+}
+
+.community-content h2 {
+    font-family: 'Geom', sans-serif;
+    color: var(--white);
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.community-content .highlight-text {
+    font-family: 'gang of three', cursive;
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.btn-community {
+    background-color: var(--pink);
+    color: white;
+    font-family: 'Geom', sans-serif;
+    font-size: 1rem;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px 20px 20px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-community:hover {
+    background-color: #b84660;
+    transform: scale(1.05);
+}
+
+/* --- FIN Sección de Información (Paneles 2 y 3) --- */
+
+/* --- Panel 4 --- */
+
+/* sección para los estilos del panel 4 (Testimonios o CTA final) */
+
+/* --- FIN Panel 4 --- */
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.main-footer a {
+    color: var(--blue-marine);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+    color: var(--teal);
+}
+
+/* --- FIN Footer --- */
