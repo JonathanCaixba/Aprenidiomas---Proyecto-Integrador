@@ -12,7 +12,7 @@
     --light-green: #e8e9c9;
     --black: #000000;
     --darkred: #8b0000;
-    --background: var(--light-yellow);
+    --background: var(--white);
     --blue-marine: #2a3b8f;
     --yellow-shadow: #ffdd57;
 }
@@ -20,7 +20,7 @@
 /* Estilos globales */
 html, body {
     font-family: 'Geom', sans-serif;
-    
+    background-color: var(--background);
     color: var(--black);
     margin: 0;
     padding: 0;
@@ -229,7 +229,7 @@ nav a.ul-active {
 
 .highlight-text-description{
     font-family: 'Gang of Three', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     color: var(--white);
     margin-left: auto;
     margin-right: auto;
@@ -243,8 +243,8 @@ nav a.ul-active {
     left: 48%;
     transform: translateX(-50%);
     z-index: 10;
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     /* Importante: Misma altura que ancho para ser círculo */
     border-radius: 50%;
     overflow: hidden;
@@ -288,6 +288,7 @@ nav a.ul-active {
 
 .info-content {
     margin-top: 3rem;
+    margin-left: 4rem;
 }
 .btn-group{
     margin-top: 3rem;
@@ -515,3 +516,133 @@ nav a.ul-active {
     }
 }
 /* --- FIN Responsividad Navbar --- */
+
+/* --- RESPONSIVIDAD PANELES 1 y 2 ASISTIDO CON IA (ABOUT US) --- */
+@media (max-width: 992px) {
+
+    /* 1. El Contenedor Padre */
+    .about-section {
+        flex-direction: column;
+        /* Apilamos uno sobre otro */
+        margin-top: -2rem;
+        /* Reducimos la subida negativa */
+        gap: 0;
+        /* Sin huecos, controlaremos con margin */
+        padding-bottom: 3rem;
+        position: relative;
+    }
+
+    /* 2. El Panel Amarillo (Arriba) */
+    .panel-description-about {
+        width: 100%;
+        margin-top: 1rem;
+        margin-right: 0;
+        padding: 6rem 2rem 5rem 2rem;
+        /* Un poco más de padding abajo */
+
+        /* CORTE INFERIOR: Diagonal que sube de Izquierda a Derecha */
+        /* Empieza en la esquina (0 100%) y sube un poco a la derecha (100% 95%) */
+        clip-path: polygon(0 0,
+                100% 0,
+                100% 100%,
+                0 93%);
+
+        z-index: 2;
+        /* Importante para el orden */
+    }
+
+    /* Ajuste de textos en móvil */
+    .desc-content p {
+        text-align: center;
+        /* Párrafos centrados en móvil se ven más elegantes */
+        font-size: 1rem;
+    }
+
+    /* 3. El Panel Azul Teal (Abajo) */
+    .panel-info-about {
+        width: 100%;
+        margin-left: 0;
+
+        /* AJUSTE DEL HUECO (GAP): */
+        /* -2rem acerca los paneles. Si quieres MÁS espacio blanco, pon -1rem o 0 */
+        margin-top: .5rem;
+
+        padding: 6rem 2rem 4rem 2rem;
+
+        /* CORTE SUPERIOR: Paralelo al de arriba */
+        /* Empieza bajado al 5% y sube a la esquina 0% */
+        clip-path: polygon(0% 0%,
+                /* Izquierda: coincide con la inclinación del amarillo */
+                100% 8%,
+                /* Derecha: llega al tope */
+                100% 100%,
+                0 100%);
+
+        z-index: 1;
+    }
+}
+
+/* Títulos en móvil */
+.big-title {
+    font-size: 2.8rem;
+    /* Reducimos el tamaño gigante */
+    margin-bottom: 1.5rem;
+}
+
+.small-title {
+    font-size: 1.4rem;
+}
+
+/* Botones apilados o más pequeños */
+.about-buttons {
+    flex-direction: column;
+    /* Botones uno arriba de otro en celulares muy angostos */
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+/* RESPONSIVIDAD: Video Logo - ASISTIDO CON IA */
+@media (max-width: 992px) {
+    .parrot-sticker {
+        width: 180px;
+        height: 180px;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        /* Ajustamos la posición: 
+           -50% X: Lo centra horizontalmente.
+           -50% Y: Lo centra verticalmente en su propio eje.
+        */
+
+        margin-top: 2rem;
+    }
+}
+
+/* Para pantallas muy pequeñas (celulares angostos) */
+@media (max-width: 480px) {
+    .parrot-sticker {
+        width: 140px;
+        height: 140px;
+        margin-top: 2rem;
+    }
+    .highlight-text-description{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .info-content{
+        margin-top: 1rem;
+        align-items: center;
+        text-align: center;
+        margin-left: 0rem;
+    }
+    .highlight-text{
+        font-size: 2.5rem;
+    }
+
+}
+
+/* --- FIN Responsividad Panel 1 y 2 AboutUs --- */
