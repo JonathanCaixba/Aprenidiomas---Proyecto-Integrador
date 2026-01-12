@@ -18,7 +18,7 @@
 /* Estilos globales */
 html, body {
     font-family: 'Geom', sans-serif;
-    background-color: var(--background);
+    background-color: #ffffff;
     color: var(--black);
     margin: 0;
     padding: 0;
@@ -363,6 +363,53 @@ nav a.ul-active {
     border-radius: none;
 }
 
+/*carrusel panel 2*/
+
+/*.stats-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 120px; /* importante para que no salte */
+/*}*/
+
+/* --- Carrusel Stats --- */
+.stats-carousel {
+    width: 100%;
+    overflow: hidden;
+    max-width: 420px;
+}
+
+.stats-track {
+    display: flex;
+    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+.stat-item {
+    min-width: 100%;
+    justify-content: center;
+}
+
+/* --- Dots --- */
+.stats-dots {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.stats-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(42, 59, 143, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stats-dots button.active {
+    background-color: #2a3b8f;
+}
+
 .stat-item {
     display: flex;
     align-items: center;
@@ -435,6 +482,10 @@ nav a.ul-active {
     background-color: #b84660;
     transform: scale(1.05);
 }
+
+
+
+
 
 /* --- FIN Sección de Información (Paneles 2 y 3) --- */
 

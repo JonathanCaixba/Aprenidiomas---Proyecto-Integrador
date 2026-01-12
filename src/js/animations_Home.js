@@ -81,6 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//cards de panel 4
+
 const cards = document.querySelectorAll('.flip-card');
 
 document.querySelectorAll(".flip-card").forEach(card => {
@@ -89,5 +91,74 @@ document.querySelectorAll(".flip-card").forEach(card => {
             if (c !== card) c.classList.remove("is-flipped");
         });
         card.classList.toggle("is-flipped");
+    });
+});
+
+//dots de panel 2
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.stats-track');
+    const slides = document.querySelectorAll('.stat-item');
+    const dotsContainer = document.querySelector('.stats-dots');
+
+    if (!track || slides.length === 0 || !dotsContainer) return;
+
+    let index = 0;
+    let interval;
+    let startX = 0;
+
+    /* Crear dots */
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    function goToSlide(i) {
+        index = i;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        updateDots();
+    }
+
+    function updateDots() {
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        index = (index + 1) % slides.length;
+        goToSlide(index);
+    }
+
+    /* Autoplay */
+    function startAutoPlay() {
+        interval = setInterval(nextSlide, 3500);
+    }
+
+    function stopAutoPlay() {
+        clearInterval(interval);
+    }
+
+    startAutoPlay();
+
+    /* Pausa al hover */
+    track.addEventListener('mouseenter', stopAutoPlay);
+    track.addEventListener('mouseleave', startAutoPlay);
+
+    /* Swipe móvil */
+    track.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+    });
+
+    track.addEventListener('touchend', e => {
+        const endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) nextSlide();
+        if (endX - startX > 50) {
+            index = (index - 1 + slides.length) % slides.length;
+            goToSlide(index);
+        }
     });
 });
