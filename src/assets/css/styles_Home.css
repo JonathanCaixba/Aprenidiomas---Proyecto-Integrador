@@ -409,10 +409,12 @@ nav a.ul-active {
 
 .stat-item {
     display: flex;
+    text-align: center;
     align-items: center;
     gap: 1.5rem;
     width: 100%;
     max-width: 400px;
+    flex-direction: column;
 }
 
 .stat-number {
@@ -420,13 +422,13 @@ nav a.ul-active {
     font-size: 3.5rem;
     color: #2a3b8f;
     line-height: 1;
-    min-width: 80px;
-    text-align: right;
+    min-width: unset;
+    text-align: center;
 }
 
 .stat-text {
     font-family: 'Geom', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #2a3b8f;
     line-height: 1.3;
 }
