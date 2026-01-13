@@ -362,21 +362,12 @@ nav a.ul-active {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 7rem 2rem 3rem 2rem;
-    gap: 2rem;
+    padding: 10rem 2rem 4rem 2rem;
+    gap: 3rem;
     border-radius: none;
 }
-
-/*carrusel panel 2*/
-
-/*.stats-carousel {
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 120px; /* importante para que no salte */
-/*}*/
 
 /* --- Carrusel Stats --- */
 .stats-carousel {
@@ -441,12 +432,8 @@ nav a.ul-active {
 }
 
 .stats-btn {
-    /*margin-top: auto;*/
-}
-
-.stats-btn {
     padding: 1rem 3.2rem;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
 
@@ -458,6 +445,7 @@ nav a.ul-active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -472,6 +460,14 @@ nav a.ul-active {
 }
 
 /* --- Panel Amarillo (Comunidad) --- */
+.community-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: center;
+    text-align: center;
+}
+
 .panel-community {
     background-color: var(--yellow);
     flex: 1;
@@ -489,15 +485,16 @@ nav a.ul-active {
     font-family: 'Geom', sans-serif;
     color: var(--white);
     font-size: 1.8rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    margin-bottom: 0;
     font-weight: normal;
 }
 
 .community-content .highlight-text {
     font-family: 'gang of three', cursive;
     font-size: 3.8rem;
-    margin-bottom: 2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.8rem;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
     display: block;
 }
@@ -506,13 +503,15 @@ nav a.ul-active {
     background-color: var(--pink);
     color: white;
     font-family: 'Geom', sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 1rem 3.2rem;
     border: none;
     border-radius: 50px 20px 20px 20px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, background-color 0.2s;
+    align-self: flex-end;
+    margin-right: 10.5rem;
     /*margin-top: auto;*/
 }
 
