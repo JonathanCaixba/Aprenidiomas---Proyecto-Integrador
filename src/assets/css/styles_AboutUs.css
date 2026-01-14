@@ -1,182 +1,182 @@
 /* Variables para la paleta de colores (Home) */
 :root {
-  --light-yellow: #f1e3b4;
-  --white: #ffffff;
-  --yellow: #e8c86a;
-  --teal: #5aaaba;
-  --light-blue: #a3d4df;
-  --light-pink: #e9a5b4;
-  --pink: #d35a78;
-  --pink-shadow: #ff134e;
-  --gray: #595757;
-  --light-green: #e8e9c9;
-  --black: #000000;
-  --darkred: #8b0000;
-  --background: var(--light-yellow);
-  --blue-marine: #2a3b8f;
-  --yellow-shadow: #ffdd57;
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--white);
+    --blue-marine: #2a3b8f;
+    --yellow-shadow: #ffdd57;
 }
 
 /* Estilos globales */
-html,
-body {
-  font-family: "Geom", sans-serif;
-  background-color: #ffffff;
-  color: var(--black);
-  margin: 0;
-  padding: 0;
-  overflow: hidden; /* BLOQUEA TODO EL SCROLL */
+html, body {
+    font-family: 'Geom', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 /* --- Navbar --- */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.2rem 4rem;
-  background-color: white;
-  /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .mobile-actions {
-  display: none;
+    display: none;
 }
 
 /* Mostramos las acciones de la barra superior */
 .desktop-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 /* Ocultamos elementos móviles por defecto */
 .hamburger,
 .mobile-actions,
 .menu-overlay {
-  display: none;
+    display: none;
 }
 
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Animación de rebote del Logo */
 @keyframes logo-bounce {
-  0%,
-  100% {
-    transform: scale(1);
-  }
 
-  30% {
-    transform: scale(1.2) rotate(-5deg);
-  }
+    0%,
+    100% {
+        transform: scale(1);
+    }
 
-  50% {
-    transform: scale(0.9) rotate(5deg);
-  }
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
 
-  80% {
-    transform: scale(1.1);
-  }
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
 }
 
 .animate-logo {
-  animation: logo-bounce 0.8s ease-in-out;
+    animation: logo-bounce 0.8s ease-in-out;
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  margin-right: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 .logo:hover {
-  transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1) rotate(5deg);
 }
 
 nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
-  color: var(--teal);
-  text-decoration: none;
-  font-family: "Geom", sans-serif;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Geom', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: var(--pink);
+    color: var(--pink);
 }
 
 nav a.ul-active {
-  color: var(--pink-shadow);
-  font-weight: bold;
-  border-bottom: 2px solid var(--pink-shadow);
-  padding-bottom: 4px;
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
 }
 
 .nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
 }
 
 /* Botón Inscribirse */
 .btn-enroll {
-  background-color: var(--teal);
-  color: var(--white);
-  border: none;
-  padding: 0.6rem 2rem;
-  border-radius: 50px 20px 20px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-enroll:hover {
-  background-color: var(--light-pink);
-  transform: scale(1.05);
-  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .icons-nav {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+.mobile-actions{
+    display: none;
 }
 
 /* --- FIN Navbar --- */
 
-/* Paneles superiores */
-
+/* --- Sección de Información (Panel 1 y 2 AboutUs) --- */
 .hero-panels {
   position: relative;
   width: 100vw;
@@ -577,28 +577,292 @@ nav a.ul-active {
 
 /* --- Footer --- */
 .main-footer {
-  height: 2vh;
-  background: #fff;
-  color: white;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 14px;
+    text-align: center;
+    padding: 30px;
+    color: var(--white);
+    font-size: 12px;
 }
 
 .main-footer a {
-  color: var(--blue-marine);
-  text-decoration: none;
+    color: var(--blue-marine);
+    text-decoration: none;
 }
 
 .main-footer a:hover {
-  text-decoration: underline;
-  color: var(--teal);
+    text-decoration: underline;
+    color: var(--teal);
 }
 
 /* --- FIN Footer --- */
 
 /* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
 
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Acciones dentro del menú móvil */
+    @media (max-width: 992px) {
+
+        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+        .mobile-actions {
+            display: flex;
+            /* O block, según prefieras */
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2rem;
+            /* Separación de los links */
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            /* Línea separadora elegante */
+            gap: 1.5rem;
+        }
+
+        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+        .desktop-actions {
+            display: none;
+        }
+
+        /* Ajuste visual para los iconos en móvil */
+        .mobile-icons {
+            font-size: 1.8rem;
+            gap: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .full-width {
+        width: 40%;
+        text-align: center;
+    }
+
+    /* 3. Overlay (Fondo oscuro) */
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/* --- FIN Responsividad Navbar --- */
+
+/* --- RESPONSIVIDAD PANELES 1 y 2 ASISTIDO CON IA (ABOUT US) --- */
+@media (max-width: 992px) {
+
+    /* 1. El Contenedor Padre */
+    .about-section {
+        flex-direction: column;
+        /* Apilamos uno sobre otro */
+        margin-top: -2rem;
+        /* Reducimos la subida negativa */
+        gap: 0;
+        /* Sin huecos, controlaremos con margin */
+        padding-bottom: 3rem;
+        position: relative;
+    }
+
+    /* 2. El Panel Amarillo (Arriba) */
+    .panel-description-about {
+        width: 100%;
+        margin-top: 1rem;
+        margin-right: 0;
+        padding: 6rem 2rem 5rem 2rem;
+        /* Un poco más de padding abajo */
+
+        /* CORTE INFERIOR: Diagonal que sube de Izquierda a Derecha */
+        /* Empieza en la esquina (0 100%) y sube un poco a la derecha (100% 95%) */
+        clip-path: polygon(0 0,
+                100% 0,
+                100% 100%,
+                0 93%);
+
+        z-index: 2;
+        /* Importante para el orden */
+    }
+
+    /* Ajuste de textos en móvil */
+    .desc-content p {
+        text-align: center;
+        /* Párrafos centrados en móvil se ven más elegantes */
+        font-size: 1rem;
+    }
+
+    /* 3. El Panel Azul Teal (Abajo) */
+    .panel-info-about {
+        width: 100%;
+        margin-left: 0;
+
+        /* AJUSTE DEL HUECO (GAP): */
+        /* -2rem acerca los paneles. Si quieres MÁS espacio blanco, pon -1rem o 0 */
+        margin-top: .5rem;
+
+        padding: 6rem 2rem 4rem 2rem;
+
+        /* CORTE SUPERIOR: Paralelo al de arriba */
+        /* Empieza bajado al 5% y sube a la esquina 0% */
+        clip-path: polygon(0% 0%,
+                /* Izquierda: coincide con la inclinación del amarillo */
+                100% 8%,
+                /* Derecha: llega al tope */
+                100% 100%,
+                0 100%);
+
+        z-index: 1;
+    }
+}
+
+/* Títulos en móvil */
+.big-title {
+    font-size: 2.8rem;
+    /* Reducimos el tamaño gigante */
+    margin-bottom: 1.5rem;
+}
+
+.small-title {
+    font-size: 1.4rem;
+}
+
+/* Botones apilados o más pequeños */
+.about-buttons {
+    flex-direction: column;
+    /* Botones uno arriba de otro en celulares muy angostos */
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+
+/* RESPONSIVIDAD: Video Logo - ASISTIDO CON IA */
+@media (max-width: 992px) {
+    .parrot-sticker {
+        width: 180px;
+        height: 180px;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        /* Ajustamos la posición: 
+           -50% X: Lo centra horizontalmente.
+           -50% Y: Lo centra verticalmente en su propio eje.
+        */
+
+        margin-top: 2rem;
+    }
+}
+
+/* Para pantallas muy pequeñas (celulares angostos) */
+@media (max-width: 480px) {
+    .parrot-sticker {
+        width: 140px;
+        height: 140px;
+        margin-top: 2rem;
+    }
+    .highlight-text-description{
+        text-align: center;
+        font-size: 2rem;
+    }
+    .info-content{
+        margin-top: 1rem;
+        align-items: center;
+        text-align: center;
+        margin-left: 0rem;
+    }
+    .highlight-text{
+        font-size: 2.5rem;
+    }
+
+}
+
+/* --- FIN Responsividad Panel 1 y 2 AboutUs --- */
