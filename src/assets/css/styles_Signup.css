@@ -309,7 +309,7 @@ nav a.ul-active {
 .diagonal-split {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     overflow: hidden;
 }
 
@@ -329,6 +329,7 @@ nav a.ul-active {
     clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
 }
 
+ /* Línea diagonal blanca en el centro de la imagen */
 .diagonal-split::after {
     content: "";
     position: absolute;
@@ -339,23 +340,47 @@ nav a.ul-active {
     z-index: 2;
 }
 
-/* SOCIAL */
+/* REDES SOCIALES (SECCION ROSA) */
 .social-cta {
-    text-align: right;
-    padding: 60px 20px;
+    padding: 50px 40px;
     background-color: #d35a78;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
 }
+ /* TÍTULO "SIGUE LA HISTORIA EN NUESTRAS REDES" */
+.social-cta h3 {
+    color: #ffffff;
+} 
 
+/* ÍCONOS DE REDES SOCIALES (FB, IG, TIKTOK) */
+.social-icons img {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    box-sizing: border-box;
+}
 
 .content-section,
 .visual-section {
     width: 100%;
-    height: auto;
+    flex: 1;
 }
 
 .visual-section {
-    height: 50vh;
+  display: flex;
+  flex-direction: column;
 }
+/* NOTA: DESCARGAR ICONOS DEL MISMO TAMAÑO PARA NO ESCALAR AQUI (WhatsApp) */
+.icon.whatsapp {
+    transform: scale(0.6); 
+}
+
+/* AQUI TERMINA REDES SOCIALES (SECCION ROSA) */
+
 
 /* --- Footer --- */
 .main-footer {
