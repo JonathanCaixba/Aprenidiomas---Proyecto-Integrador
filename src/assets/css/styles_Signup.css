@@ -1,0 +1,516 @@
+/* Variables para la paleta de colores (Home) */
+:root {
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--light-yellow);
+    --blue-marine: #2a3b8f;
+    --yellow-shadow: #ffdd57;
+}
+
+/* Estilos globales */
+html,
+body {
+    font-family: 'Questrial';
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-logo {
+    animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: auto;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Questrial';
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a.ul-active {
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* --- FIN Navbar --- */
+
+/* --- Sección de Registro (PLASTA DE COLOR AQUA) --- */
+.form-section {
+    flex: 1;
+    min-width: 50%;
+    background-color: #5aaaba;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.form-container {
+    max-width: 450px;
+    width: 100%;
+}
+
+/* TÍTULO "CREA TU CUENTA" */
+.form-title {
+    font-family: 'Gang of Three', sans-serif;
+    font-size: 42px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+/* SUBTÍTULO DEBAJO DEL TÍTULO */
+.form-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* ESTILO DEL FORMULARIO */
+.registration-form .input-group {
+    margin-bottom: 15px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.registration-form input::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ESTILO DEL TEXTO ABAJO DEL FORMULARIO*/
+.checkbox-group {
+    margin: 25px 0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+ /* ESTILO DEL CHECKBOX PERSONALIZADO REDONDO*/
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  border: 2px;
+  border-radius: 50%;
+  top: -2px;
+  left: 2px;
+  font-size: 12px;
+  color: #5aaaba;
+}
+
+
+.checkbox-item span {
+    white-space: nowrap;
+}
+
+/* ESTILO DE " AVISO DE PRIVACIDAD" SUBRAYADO */
+.checkbox-item a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* BOTÓN "REGISTRARME" */
+.btn-submit {
+    background-color: var(--yellow);
+    color: white;
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 20px 20px 50px 20px;
+    font-family: 'Questrial', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+/* BOTÓN "REGISTRARME" AL ACCIONARLO*/
+.btn-submit:active {
+    transform: translateY(4px);
+}
+/* --- FIN Sección de Registro --- */
+
+
+
+.hero {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-section {
+  width: 50%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #0f172a;
+  color: white;
+}
+.visual-section {
+  width: 50%;
+  height: 100vh;
+}
+.diagonal-split {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.img-left,
+.img-right {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+.img-left {
+  clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+}
+.img-right {
+  clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+}
+.diagonal-split::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+
+  clip-path: polygon(52% 0, 56% 0, 48% 100%, 44% 100%);
+  z-index: 2;
+}
+
+  /* SOCIAL */
+.social-cta {
+  text-align: right;
+  padding: 60px 20px;
+  background-color: #d35a78;
+}
+
+
+  .content-section,
+  .visual-section {
+    width: 100%;
+    height: auto;
+  }
+
+  .visual-section {
+    height: 50vh;
+  }
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.main-footer a {
+    color: var(--blue-marine);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+    color: var(--teal);
+}
+
+/* --- FIN Footer --- */
+
+/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
+
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Acciones dentro del menú móvil */
+    @media (max-width: 992px) {
+
+        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+        .mobile-actions {
+            display: flex;
+            /* O block, según prefieras */
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2rem;
+            /* Separación de los links */
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            /* Línea separadora elegante */
+            gap: 1.5rem;
+        }
+
+        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+        .desktop-actions {
+            display: none;
+        }
+
+        /* Ajuste visual para los iconos en móvil */
+        .mobile-icons {
+            font-size: 1.8rem;
+            gap: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .full-width {
+        width: 40%;
+        text-align: center;
+    }
+
+    /* 3. Overlay (Fondo oscuro) */
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* --- FIN Responsividad Navbar --- */
