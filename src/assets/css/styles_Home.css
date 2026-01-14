@@ -256,7 +256,7 @@ nav a.ul-active {
 /* Texto derecha */
 .panel-1-text {
     display: block;
-    padding-right: 8rem;
+    padding-right: 20rem;
     padding-left: 3rem;
     padding-top: 2rem;
     color: white;
@@ -295,17 +295,45 @@ nav a.ul-active {
 .icon:hover {
     transform: scale(1.15) rotate(8deg);
 }
+/* FIN Icono y animación de Aprenidiomas */
 
-.icon-logo {
-    top: 2.5rem;
-    right: 2.5rem;
-    width: 240px;
-    animation: waveIn 1.2s ease-out;
+/* Iconos SVG flotantes con animaciones */
+/* Animaciones únicas para cada icono */
+@keyframes bounceIn {
+
+    /* Rebote como entrada (para ramen) */
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(1.1);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes spinIn {
+
+    /* Giro de entrada (para samurai) */
+    0% {
+        opacity: 0;
+        transform: rotate(-180deg) scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
 }
 
 @keyframes waveIn {
 
-    /* Ondulación (para el icono del logo) */
+    /* Ondulación (para gato maneki-neko y el icono del logo) */
     0% {
         opacity: 0;
         transform: rotate(0);
@@ -327,6 +355,118 @@ nav a.ul-active {
         opacity: 1;
         transform: rotate(0);
     }
+}
+
+@keyframes foldIn {
+
+    /* Despliegue (para origami) */
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes flagWave {
+
+    /* Ondear bandera */
+    0% {
+        opacity: 0;
+        transform: skewY(0);
+    }
+
+    20% {
+        transform: skewY(5deg);
+    }
+
+    40% {
+        transform: skewY(-5deg);
+    }
+
+    60% {
+        transform: skewY(5deg);
+    }
+
+    80% {
+        transform: skewY(-5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: skewY(0);
+    }
+}
+
+@keyframes floatIn {
+
+    /* Flotación suave (para flores) */
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Asignar animaciones y posiciones (En el panel 1) */
+.icon-noodle {
+    bottom: 25%;
+    left: 10%;
+    transform: rotate(-15deg);
+    animation: bounceIn 1.5s ease-in-out;
+}
+
+.icon-cat {
+    top: 3%;
+    right: 2%;
+    width: 100px;
+    animation: waveIn 1.8s ease-in-out;
+}
+
+.icon-samurai {
+    bottom: 15%;
+    left: 75%;
+    width: 90px;
+    animation: spinIn 1.2s ease-out;
+}
+
+.icon-logo {
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 540px;
+    animation: waveIn 1.2s ease-out;
+}
+
+.icon-flower {
+    bottom: 40%;
+    left: 47%;
+    width: 60px;
+    animation: floatIn 2s ease-in-out;
+}
+
+.icon-origami {
+    top: 40%;
+    left: 30%;
+    width: 50px;
+    animation: foldIn 1s linear;
+}
+
+.icon-flag {
+    top: 20%;
+    right: 30%;
+    width: 70px;
+    animation: flagWave 2s ease-in-out;
 }
 /* FIN Icono y animación de Aprenidiomas */
 
@@ -389,8 +529,8 @@ nav a.ul-active {
 /* --- Dots --- */
 .stats-dots {
     display: flex;
-    gap: 0.6rem;
-    margin-top: 1.5rem;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
 }
 
 .stats-dots button {
@@ -448,7 +588,7 @@ nav a.ul-active {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 /*cosas para que se vean igual*/
