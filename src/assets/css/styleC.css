@@ -1,0 +1,501 @@
+/* Variables para la paleta de colores (Home) */
+:root {
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--light-yellow);
+    --blue-marine: #2a3b8f;
+}
+
+/* Estilos globales */
+body {
+    font-family: 'Geom', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Estilos del título con animación de letras */
+
+
+p,
+a {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--white);
+}
+
+/* Estilos proximos Todavia no se usa un h2 */
+.quotes,
+h2 {
+    font-family: 'samurai blast', cursive;
+    color: var(--teal);
+}
+/* --- Navbar --- */
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-logo {
+    animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Geom', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a.ul-active {
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Cursos */
+.btn-courses {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-courses:hover {
+    background-color: var(--pink-shadow);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* --- FIN Navbar --- */
+
+/* Hero Section */
+.hero-section {
+    background-color: #d1617a;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5rem;
+}
+
+/* Layout Diagonal Hero */
+.diagonal-grid {
+    display: flex;
+    min-height: 450px;
+}
+
+.image-wrapper {
+    flex: 1;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    z-index: 2;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-wrapper {
+    flex: 1;
+    background-color: #e6c667;
+    margin-left: -10%;
+    padding: 60px 10% 60px 15%;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.accent-purple {
+    color: #5b4a9a;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Animación Floating Badge */
+.circular-badge {
+    background: white;
+    padding: 8px;
+    border-radius: 50%;
+    width: fit-content;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.floating-badge {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+.btn-courses {
+    background: #64b5f6;
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+/* Banner Central */
+.center-banner {
+    background: white;
+    text-align: center;
+    padding: 25px;
+    transform: rotate(-1.5deg);
+    width: 104%;
+    margin-left: -2%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+/* --- SECCIÓN MANGA-GRID (ESTILO COMIC) --- */
+.manga-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 15px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #fff;
+    box-shadow: 8px 8px 0px rgba(0,0,0,0.1);
+}
+
+.item-1 {
+    grid-row: 1;
+    height: 250px;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('candy.jpg');
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.item-2 {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: 515px;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('samurai.jpg');
+    clip-path: polygon(5% 0, 100% 0, 100% 100%, 0% 100%);
+    margin-left: -15px;
+}
+
+.item-3 {
+    grid-row: 2;
+    height: 250px;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('manga.jpg');
+    clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    z-index: 2;
+}
+
+.bold {
+    color: #e6c667; 
+    font-weight: 800;
+}
+
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #eee;
+}
+
+/* --- Estilos Base Navbar (Desktop First) --- */
+
+/* Ocultamos elementos móviles en desktop */
+.hamburger,
+.mobile-actions .menu-overlay {
+    display: none;
+}
+
+/* Navegación Desktop */
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- RESPONSIVIDAD NIVEL SENIOR (Tablet/Móvil) --- */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
+
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* Acciones dentro del menú móvil */
+    @media (max-width: 992px) {
+
+        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+        .mobile-actions {
+            display: flex;
+            /* O block, según prefieras */
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 2rem;
+            /* Separación de los links */
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            /* Línea separadora elegante */
+            gap: 1.5rem;
+        }
+
+        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+        .desktop-actions {
+            display: none;
+        }
+
+        /* Ajuste visual para los iconos en móvil */
+        .mobile-icons {
+            font-size: 1.8rem;
+            gap: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .full-width {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 3. Overlay (Fondo oscuro) */
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(3px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+/* --- FIN RESPONSIVIDAD NAVBAR --- */

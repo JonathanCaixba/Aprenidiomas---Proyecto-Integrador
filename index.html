@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiomas - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/assets/css/styles_Home.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="#">
+                <img src="./src/assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="ul-active" data-link>INICIO</a></li>
+                    <li><a href="#" data-link>CURSOS</a></li>
+                    <li><a href="./src/views/about_us.html" data-link>NOSOTROS</a></li>
+                    <li><a href="./src/views/community.html" data-link>COMUNIDAD</a></li>
+                    <li><a href="#" data-link>TESTIMONIOS</a></li>
+                    <li><a href="./src/views/contact_us.html" data-link>CONTACTO</a></li>
+                    <li><a href="#" data-link>FAQ</a></li>
+
+                    <li class="mobile-actions">
+                        <button class="btn-enroll full-width">¡Inscríbete!</button>
+                        <div class="icons-nav mobile-icons">
+                            <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-actions desktop-actions">
+            <button class="btn-enroll">¡Inscríbete!</button>
+            <div class="icons-nav">
+                <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+            </div>
+        </div>
+    </header>
+    <div class="menu-overlay"></div>
+    <!-- FIN Navbar -->
+
+    <!-- <div><span class="fish-asian-sticker"><img src="images/fishAsian.png" alt="Fish"></span></div> -->
+
+    <!-- Panel 1 -->
+    <div class="panel panel-1">
+        <div class="panel-1-content">
+            <div class="panel-1-image">
+                <img src="./src/assets/images/student.jpg" alt="Niña estudiando en laptop">
+            </div>
+            <div class="panel-1-text">
+                <img src="./src/assets/icons/AprenIdiomas_LOGO-01.svg" alt="Iconlogo" class="icon icon-logo">
+                <h1>Aprende Chino, Coreano, Japonés</h1>
+                 <p>¡Clases 100% en línea!</p>
+                <div class="buttons">
+                    <button class="btn-courses">Cursos</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Iconos flotantes SVG posicionados absolutamente dentro del panel 1 -->
+        <!-- <img src="assets/osoBlancoRojo.svg" alt="Samurai" class="icon icon-cat"> -->
+        <!--<img src="assets/samurai.svg" alt="Maneki Neko" class="icon icon-samurai">-->
+    <!-- FIN del panel 1 -->
+
+    <!-- Panel 2 y 3 -->
+    <section class="info-section">
+
+        <div class="panel-stats">
+            <div class="stat-item">
+                <span class="stat-number">300</span>
+                <p class="stat-text">Estudiantes motivados<br>por el estudio del idioma</p>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">+5</span>
+                <p class="stat-text">Años de<br>experiencia</p>
+            </div>
+
+            <div class="stat-item">
+                <span class="stat-number">24</span>
+                <p class="stat-text">Horas activas para<br>responder tus dudas</p>
+            </div>
+        </div>
+
+        <div class="panel-community">
+            <div class="community-content">
+                <h2>Únete a nuestros grupos<br>y forma parte de esta</h2>
+                <h2 class="highlight-text">LINDA COMUNIDAD</h2>
+                <button class="btn-community">Nosotros</button>
+            </div>
+        </div>
+
+    </section>
+    <!-- FIN Panel 2 y 3 -->
+
+    <!-- Panel 4 -->
+    
+    <!-- FIN Panel 4 -->
+
+    <!-- Footer -->   
+    <footer class="main-footer">
+        <a href="#">Términos y Condiciones | Aviso de Privacidad | © 2026 Aprenidiomas - Powered by NaN</a>
+    </footer>
+    <!-- FIN Footer -->
+
+    <script src="./src/js/animations_Home.js" type="module"></script>
+</body>
+
+</html>
