@@ -16,7 +16,8 @@
 }
 
 /* Estilos globales */
-html, body {
+html,
+body {
     font-family: 'Geom', sans-serif;
     background-color: #ffffff;
     color: var(--black);
@@ -295,6 +296,7 @@ nav a.ul-active {
 .icon:hover {
     transform: scale(1.15) rotate(8deg);
 }
+
 /* FIN Icono y animación de Aprenidiomas */
 
 /* Iconos SVG flotantes con animaciones */
@@ -468,6 +470,7 @@ nav a.ul-active {
     width: 70px;
     animation: flagWave 2s ease-in-out;
 }
+
 /* FIN Icono y animación de Aprenidiomas */
 
 /* --- FIN Panel 1 --- */
@@ -518,7 +521,7 @@ nav a.ul-active {
 
 .stats-track {
     display: flex;
-    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+    transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
 }
 
 .stat-item {
@@ -579,7 +582,7 @@ nav a.ul-active {
     letter-spacing: 0.5px;
 }
 
-.stats-btn:hover{
+.stats-btn:hover {
     background-color: #2a3b8f;
 }
 
@@ -605,7 +608,7 @@ nav a.ul-active {
 .community-content {
     display: flex;
     flex-direction: column;
-    align-items: center;     
+    align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: auto;
@@ -644,7 +647,7 @@ nav a.ul-active {
 }
 
 .community-btn-wrapper {
-    margin-top: 2rem;   
+    margin-top: 2rem;
     align-self: flex-end;
     margin-right: 12.5rem;
 }
@@ -692,13 +695,13 @@ nav a.ul-active {
 
 .panel-4 {
     width: 100vw;
-  background: var(--pink);
-  padding: 40px 80px;
+    background: var(--pink);
+    padding: 40px 80px;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
 }
 
 .panel-4-sector {
@@ -715,9 +718,9 @@ nav a.ul-active {
 }
 
 .panel-4-header h2 {
-  font-size: 3.5rem;
-  color: white;
-  text-align: center;
+    font-size: 3.5rem;
+    color: white;
+    text-align: center;
 }
 
 .panel-4 h1,
@@ -729,8 +732,8 @@ nav a.ul-active {
 }
 
 .panel-4-header span {
-  font-family: 'gang of three', cursive;
-  font-weight: 800;
+    font-family: 'gang of three', cursive;
+    font-weight: 800;
 }
 
 .panel-4-profesores {
@@ -792,7 +795,7 @@ nav a.ul-active {
     text-align: center;
 }
 
-.flip-card-back{
+.flip-card-back {
     transform: rotateY(180deg);
     background: #5AAABA;
     color: white;
@@ -807,7 +810,7 @@ nav a.ul-active {
     gap: 14px;
 }
 
-.flip-card-front img{
+.flip-card-front img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -821,7 +824,7 @@ nav a.ul-active {
     line-height: 1.4;
 }
 
-.flip-card-back p{
+.flip-card-back p {
     font-size: 0.85rem;
     line-height: 1.4;
 }
@@ -988,7 +991,7 @@ nav a.ul-active {
 
     /* PANEL 1 */
     .panel-1 {
-        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
         padding-bottom: 3rem;
     }
 
@@ -1027,15 +1030,23 @@ nav a.ul-active {
     }
 
     /* PANEL 2 Y 3 */
+    .info-sticker {
+        display: none;
+    }
+
     .info-section {
         flex-direction: column;
         clip-path: none;
-        margin-top: -4rem;
+        margin-top: 1rem;
         gap: 0;
     }
 
     .panel-stats {
-        padding: 4rem 1.5rem;
+        padding: 5rem 1.5rem 6rem;
+        clip-path: polygon(0 0, 100% 10%, 100% 85%, 0 100%);
+        margin-bottom: -2rem;
+        position: relative;
+        z-index: 2;
     }
 
     .stat-item {
@@ -1051,7 +1062,22 @@ nav a.ul-active {
     }
 
     .panel-community {
-        padding: 4rem 1.5rem 5rem;
+        background-color: var(--yellow);
+        padding: 8rem 1.5rem 5rem;
+        /* queda parejo con Panel 2 */
+        clip-path: polygon(0 15%, 100% 3%, 100% 100%, 0 100%);
+        z-index: 1;
+        position: relative;
+        margin-top: 0;
+    }
+
+    .community-btn-wrapper {
+        margin-right: 0;
+        align-self: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
     }
 
     .community-content h2 {
@@ -1067,6 +1093,16 @@ nav a.ul-active {
         padding: 14px 36px;
     }
 
+    .panel-stats,
+    .panel-community {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    .stats-btn {
+        display: none;
+    }
+
     /* panel 4 */
 
     .panel-4 {
@@ -1077,7 +1113,7 @@ nav a.ul-active {
         gap: 24px;
     }
 
-    
+
     .panel-4-profesores {
         flex-direction: column;
         gap: 32px;
