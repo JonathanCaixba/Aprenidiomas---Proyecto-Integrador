@@ -200,7 +200,7 @@ nav a.ul-active {
     letter-spacing: 2px;
 }
 
-/* SUBTÍTULO DEBAJO DEL TÍTULO */
+/* TEXTO EXTRA SUBTITULO */
 .form-subtitle {
     font-size: 18px;
     margin-bottom: 40px;
@@ -242,16 +242,17 @@ nav a.ul-active {
     margin-bottom: 10px;
     cursor: pointer;
 }
- /* ESTILO DEL CHECKBOX PERSONALIZADO REDONDO*/
+
+/* ESTILO DEL CHECKBOX PERSONALIZADO REDONDO*/
 .checkbox-item input[type="checkbox"]:checked::after {
-  content: "✔";
-  position: absolute;
-  border: 2px;
-  border-radius: 50%;
-  top: -2px;
-  left: 2px;
-  font-size: 12px;
-  color: #5aaaba;
+    content: "✔";
+    position: absolute;
+    border: 2px;
+    border-radius: 50%;
+    top: -2px;
+    left: 2px;
+    font-size: 12px;
+    color: #5aaaba;
 }
 
 
@@ -259,7 +260,7 @@ nav a.ul-active {
     white-space: nowrap;
 }
 
-/* ESTILO DE " AVISO DE PRIVACIDAD" SUBRAYADO */
+/* ESTILO DE "AVISO DE PRIVACIDAD" SUBRAYADO */
 .checkbox-item a {
     color: white;
     text-decoration: underline;
@@ -282,75 +283,79 @@ nav a.ul-active {
 .btn-submit:active {
     transform: translateY(4px);
 }
+
 /* --- FIN Sección de Registro --- */
-
-
-
 .hero {
-  display: flex;
-  min-height: 100vh;
+    display: flex;
+    min-height: 100vh;
 }
 
 .content-section {
-  width: 50%;
-  padding: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 50%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-  background-color: #0f172a;
-  color: white;
+    background-color: #0f172a;
+    color: white;
 }
+
 .visual-section {
-  width: 50%;
-  height: 100vh;
+    width: 50%;
+    height: 100vh;
 }
+
 .diagonal-split {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
 .img-left,
 .img-right {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
 }
+
 .img-left {
-  clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
+    clip-path: polygon(0 0, 55% 0, 45% 100%, 0 100%);
 }
+
 .img-right {
-  clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+    clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
 }
+
 .diagonal-split::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: white;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
 
-  clip-path: polygon(52% 0, 56% 0, 48% 100%, 44% 100%);
-  z-index: 2;
+    clip-path: polygon(52% 0, 56% 0, 48% 100%, 44% 100%);
+    z-index: 2;
 }
 
-  /* SOCIAL */
+/* SOCIAL */
 .social-cta {
-  text-align: right;
-  padding: 60px 20px;
-  background-color: #d35a78;
+    text-align: right;
+    padding: 60px 20px;
+    background-color: #d35a78;
 }
 
 
-  .content-section,
-  .visual-section {
+.content-section,
+.visual-section {
     width: 100%;
     height: auto;
-  }
+}
 
-  .visual-section {
+.visual-section {
     height: 50vh;
-  }
+}
 
 /* --- Footer --- */
 .main-footer {
