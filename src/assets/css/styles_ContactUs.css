@@ -1,4 +1,3 @@
-/* Variables para la paleta de colores (Home) */
 :root {
     --light-yellow: #f1e3b4;
     --white: #ffffff;
@@ -19,7 +18,7 @@
 /* Estilos globales */
 html, body {
     font-family: 'Geom', sans-serif;
-    background-color: var(--background);
+    background-color: #ffffff;
     color: var(--black);
     margin: 0;
     padding: 0;
@@ -177,55 +176,17 @@ nav a.ul-active {
 
 .icons-nav {
     display: flex;
-    gap: 1.5rem;
-    font-size: 1.5rem;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icons-nav img {
+    width: 28px;
+    height: 28px;
+    display: block;
 }
 
 /* --- FIN Navbar --- */
-
-/* --- Fish Asian Sticker Animación --- */
-.fish-asian-sticker {
-    position: absolute;
-    top: 25%;
-    bottom: 86%;
-    left: 50%;
-
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.3s ease;
-    z-index: 999;
-}
-
-/* Tamaño */
-.fish-asian-sticker img {
-    width: 60px;
-    height: auto;
-    display: block;
-
-    transform-origin: center center;
-
-    animation: fish-spin 4s linear infinite;
-    animation-play-state: paused;
-}
-
-.fish-asian-sticker:hover {
-    transform: translate(-50%, -50%) scale(1.3);
-}
-
-.fish-asian-sticker:hover img {
-    animation-play-state: running;
-}
-
-@keyframes fish-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* --- FIN Fish Asian Sticker Animación --- */
 
 /* --- Sección Panel 1 --- */
 .word {
@@ -295,7 +256,7 @@ nav a.ul-active {
 /* Texto derecha */
 .panel-1-text {
     display: block;
-    padding-right: 20rem;
+    padding-right: 8rem;
     padding-left: 3rem;
     padding-top: 2rem;
     color: white;
@@ -334,45 +295,17 @@ nav a.ul-active {
 .icon:hover {
     transform: scale(1.15) rotate(8deg);
 }
-/* FIN Icono y animación de Aprenidiomas */
 
-/* Iconos SVG flotantes con animaciones */
-/* Animaciones únicas para cada icono */
-@keyframes bounceIn {
-
-    /* Rebote como entrada (para ramen) */
-    0% {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.5);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translateY(10px) scale(1.1);
-    }
-
-    100% {
-        transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes spinIn {
-
-    /* Giro de entrada (para samurai) */
-    0% {
-        opacity: 0;
-        transform: rotate(-180deg) scale(0.5);
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotate(0) scale(1);
-    }
+.icon-logo {
+    top: 2.5rem;
+    right: 2.5rem;
+    width: 240px;
+    animation: waveIn 1.2s ease-out;
 }
 
 @keyframes waveIn {
 
-    /* Ondulación (para gato maneki-neko y el icono del logo) */
+    /* Ondulación (para el icono del logo) */
     0% {
         opacity: 0;
         transform: rotate(0);
@@ -395,118 +328,7 @@ nav a.ul-active {
         transform: rotate(0);
     }
 }
-
-@keyframes foldIn {
-
-    /* Despliegue (para origami) */
-    0% {
-        opacity: 0;
-        transform: scaleX(0);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
-}
-
-@keyframes flagWave {
-
-    /* Ondear bandera */
-    0% {
-        opacity: 0;
-        transform: skewY(0);
-    }
-
-    20% {
-        transform: skewY(5deg);
-    }
-
-    40% {
-        transform: skewY(-5deg);
-    }
-
-    60% {
-        transform: skewY(5deg);
-    }
-
-    80% {
-        transform: skewY(-5deg);
-    }
-
-    100% {
-        opacity: 1;
-        transform: skewY(0);
-    }
-}
-
-@keyframes floatIn {
-
-    /* Flotación suave (para flores) */
-    0% {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-
-    50% {
-        transform: translateX(10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Asignar animaciones y posiciones (En el panel 1) */
-.icon-noodle {
-    bottom: 25%;
-    left: 10%;
-    transform: rotate(-15deg);
-    animation: bounceIn 1.5s ease-in-out;
-}
-
-.icon-cat {
-    top: 3%;
-    right: 2%;
-    width: 100px;
-    animation: waveIn 1.8s ease-in-out;
-}
-
-.icon-samurai {
-    bottom: 15%;
-    left: 75%;
-    width: 90px;
-    animation: spinIn 1.2s ease-out;
-}
-
-.icon-logo {
-    top: 2.5rem;
-    right: 2.5rem;
-    width: 240px;
-    animation: waveIn 1.2s ease-out;
-}
-
-.icon-flower {
-    bottom: 40%;
-    left: 47%;
-    width: 60px;
-    animation: floatIn 2s ease-in-out;
-}
-
-.icon-origami {
-    top: 40%;
-    left: 30%;
-    width: 50px;
-    animation: foldIn 1s linear;
-}
-
-.icon-flag {
-    top: 20%;
-    right: 30%;
-    width: 70px;
-    animation: flagWave 2s ease-in-out;
-}
+/* FIN Icono y animación de Aprenidiomas */
 
 /* --- FIN Panel 1 --- */
 
@@ -542,43 +364,121 @@ nav a.ul-active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 7rem 2rem 3rem 2rem;
-    gap: 2rem;
+    padding: 10rem 2rem 4rem 2rem;
+    gap: 3rem;
     border-radius: none;
+}
+
+/* --- Carrusel Stats --- */
+.stats-carousel {
+    width: 100%;
+    overflow: hidden;
+    max-width: 420px;
+}
+
+.stats-track {
+    display: flex;
+    transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+.stat-item {
+    min-width: 100%;
+    justify-content: center;
+}
+
+/* --- Dots --- */
+.stats-dots {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+.stats-dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.stats-dots button.active {
+    background-color: #ffffff;
 }
 
 .stat-item {
     display: flex;
+    text-align: center;
     align-items: center;
     gap: 1.5rem;
     width: 100%;
     max-width: 400px;
+    flex-direction: column;
 }
 
 .stat-number {
     font-family: 'Midorima - Personal Use', cursive;
-    font-size: 3.5rem;
+    font-size: 6.5rem;
     color: #2a3b8f;
     line-height: 1;
-    min-width: 80px;
-    text-align: right;
+    min-width: unset;
+    text-align: center;
 }
 
 .stat-text {
     font-family: 'Geom', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     color: #2a3b8f;
     line-height: 1.3;
 }
 
+.stats-btn {
+    padding: 1rem 3.2rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.stats-btn:hover{
+    background-color: #2a3b8f;
+}
+
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/*cosas para que se vean igual*/
+
+.community-content,
+.stats-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 /* --- Panel Amarillo (Comunidad) --- */
+.community-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    /*margin-bottom: auto;*/
+}
+
 .panel-community {
     background-color: var(--yellow);
     flex: 1;
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 10rem 2rem 4rem 2rem;
     text-align: center;
@@ -588,31 +488,39 @@ nav a.ul-active {
 .community-content h2 {
     font-family: 'Geom', sans-serif;
     color: var(--white);
-    font-size: 1.8rem;
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 0;
     font-weight: normal;
 }
 
 .community-content .highlight-text {
     font-family: 'gang of three', cursive;
-    font-size: 3.8rem;
-    margin-bottom: 2rem;
+    font-size: 4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.8rem;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
     display: block;
+}
+
+.community-btn-wrapper {
+    margin-top: 2rem;   
+    align-self: flex-end;
+    margin-right: 12.5rem;
 }
 
 .btn-community {
     background-color: var(--pink);
     color: white;
     font-family: 'Geom', sans-serif;
-    font-size: 1rem;
-    padding: 12px 40px;
+    font-size: 1.05rem;
+    padding: 1rem 3.2rem;
     border: none;
     border-radius: 50px 20px 20px 20px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, background-color 0.2s;
+    /*margin-top: auto;*/
 }
 
 .btn-community:hover {
@@ -620,11 +528,163 @@ nav a.ul-active {
     transform: scale(1.05);
 }
 
+/*sticker de ramen*/
+
+.info-wrapper {
+    position: relative;
+}
+
+.info-sticker {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -10%);
+    z-index: 5;
+    pointer-events: none;
+    width: 140px;
+    top: 76%;
+    transform: rotate(10deg);
+}
+
 /* --- FIN Sección de Información (Paneles 2 y 3) --- */
 
 /* --- Panel 4 --- */
 
-/* sección para los estilos del panel 4 (Testimonios o CTA final) */
+.panel-4 {
+    width: 100vw;
+  background: var(--pink);
+  padding: 40px 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.panel-4-sector {
+    width: 220px;
+    padding: 20px 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    color: white;
+}
+
+.panel-4-header h2 {
+  font-size: 3.5rem;
+  color: white;
+  text-align: center;
+}
+
+.panel-4 h1,
+.panel-4 h2,
+.panel-4 h3,
+.panel-4 p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.panel-4-header span {
+  font-family: 'gang of three', cursive;
+  font-weight: 800;
+}
+
+.panel-4-profesores {
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+}
+
+.imagen-profesor {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.imagen-profesor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card {
+    width: 220px;
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* TARJETA QUE GIRA */
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+/* CUANDO SE DA CLICK */
+.flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* CARAS */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.flip-card-back{
+    transform: rotateY(180deg);
+    background: #5AAABA;
+    color: white;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* FRENTE */
+.flip-card-front {
+    background: transparent;
+    gap: 14px;
+}
+
+.flip-card-front img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ATRÁS */
+.flip-card-back {
+    transform: rotateY(180deg);
+    padding: 20px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.flip-card-back p{
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
 
 /* --- FIN Panel 4 --- */
 
@@ -729,8 +789,6 @@ nav a.ul-active {
         gap: 2rem;
         font-size: 1.1rem;
     }
-
-
 
     /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
     .mobile-actions {
@@ -868,6 +926,37 @@ nav a.ul-active {
         font-size: 1rem;
         padding: 14px 36px;
     }
+
+    /* panel 4 */
+
+    .panel-4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 32px 20px;
+        gap: 24px;
+    }
+
+    
+    .panel-4-profesores {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .flip-card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .imagen-profesor {
+        width: 180px;
+        height: 180px;
+    }
+
+    .panel-4-header h2 {
+        text-align: center;
+        font-size: 2.2rem;
+    }
 }
 
 /* Tablet */
@@ -908,40 +997,150 @@ nav a.ul-active {
     }
 }
 
-@media (min-width: 1824px) and (max-width: 2199px) {
-
-    .panel-1-text {
-        padding-right: 7rem;
-    }
-
-    .panel-1-text h1 {
-        font-size: 4.2rem;
-        max-width: 520px;
-    }
-
-    .icon {
-        top: 2.2rem;
-        right: 2rem;
-        width: 540px;
-    }
+/* --- Inicio Estilos para ContactUs --- */
+html, body {
+  height: 100vh;
 }
 
-@media (min-width: 2200px) and (max-width: 2399px) {
-
-    .panel-1-text {
-        padding-right: 7rem;
-    }
-
-    .panel-1-text h1 {
-        font-size: 4.2rem;
-        max-width: 520px;
-    }
-
-    .icon {
-        top: 2.2rem;
-        right: 2rem;
-        width: 640px;
-    }
+body {
+  display: flex;
+  flex-direction: column;
 }
-/* --- FIN Responsividad Paneles 1, 2 y 3--- */
 
+main.container-contactus {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(60%,auto) 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 32px;
+}
+
+section.contactus-form-container {
+  grid-row: span 5 / span 5;
+  height: 100%;
+  background-color: #D35A78;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header.contactus-form-header {
+  text-align: center;
+  color: var(--white);
+  margin-top: 15%;
+}
+
+header.contactus-form-header > h1 {
+  font-family: 'Midorima - Personal Use', cursive;
+  font-size: 2.8rem;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+
+form.contactus-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px 82px;
+}
+
+form.contactus-form > .input {
+  max-height: 40px;
+  height: 100%;
+  border-radius: 100px;
+  padding: 8px 20px;
+  color: var(--white);
+  font-weight: bold;
+  border: 1px solid var(--white);
+  background-color: var(--pink);
+  resize: none;
+}
+
+form.contactus-form > .textarea {
+  max-height: 100px;
+  height: 100%;
+  border-radius: 42px 34px 114px 59px;
+  padding: 16px 20px;
+  color: var(--white);
+  font-weight: bold;
+  border: 1px solid var(--white);
+  background-color: var(--pink);
+  resize: none;
+}
+
+form.contactus-form > input::placeholder,
+form.contactus-form > textarea::placeholder {
+  color: var(--white);
+  opacity: 1;
+  font-weight: bold;
+  font-family: "Questrial", sans-serif;
+}
+
+
+form.contactus-form > button.btn-contactus {
+  background-color: var(--yellow);
+  width: 100%;
+  max-width: 140px;
+  height: 40px;
+  border: 1px solid transparent;
+  margin-left: auto;
+  box-shadow: 0 4px 4px rgba(0,0,0,.25);
+  font-weight: bold;
+}
+
+
+section.contactus-img-containter {
+  grid-row: span 4 / span 4;
+  height: 100%;
+  width: 100%;
+}
+
+.contactus-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+section.contactus-socials {
+  background-color: var(--teal);
+  grid-column-start: 2;
+  grid-row-start: 5;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+section.contactus-socials > p {
+  margin: 8px;
+  font-size: 1rem;
+}
+
+div.contactus-socials-icons {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+div.contactus-socials-icons > img.icon {
+  width: 22px;
+  height: 22px;
+  position: initial !important;
+}
+
+@media (max-width: 767px) {
+  main.container-contactus {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  section.contactus-socials {
+    padding: 1rem 0;
+  }
+}
+
+/* --- Fin Estilos para ContactUs --- */
