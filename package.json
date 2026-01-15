@@ -1,0 +1,27 @@
+{
+  "name": "aprenidiomas---proyecto-integrador---nan",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "node node_module/vite/bin/vite.js build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanCaixba/Aprenidiomas---Proyecto-Integrador.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanCaixba/Aprenidiomas---Proyecto-Integrador/issues"
+  },
+  "homepage": "https://github.com/JonathanCaixba/Aprenidiomas---Proyecto-Integrador#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
