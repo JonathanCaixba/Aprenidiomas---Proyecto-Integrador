@@ -985,48 +985,90 @@ nav a.ul-active {
 
 /* --- FIN Responsividad Navbar --- */
 
+html.no-scroll,
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    /* Force height constraint */
+    touch-action: none;
+    /* Disables touch scroll gestures */
+}
+
 /* BORRADOR DE RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) */
 /* Sección Paneles 1, 2 y 3 */
 @media (max-width: 767px) {
 
     /* PANEL 1 */
     .panel-1 {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
-        padding-bottom: 3rem;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+        padding-bottom: 0rem;
     }
 
     .panel-1-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     .panel-1-image {
-        height: 240px;
+        height: auto;
+        order: 2;
+        /* Image on bottom */
+    }
+
+    .panel-1-image img {
+        width: 100%;
+        display: block;
     }
 
     .panel-1-text {
-        text-align: center;
-        padding: 2rem 1.5rem;
+        order: 1;
+        /* Text on top */
+        padding: 2rem 1.5rem 0rem 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto auto;
+        align-items: start;
+        text-align: left;
+        gap: 0.5rem;
     }
 
     .panel-1-text h1 {
+        grid-column: 1;
+        grid-row: 1;
         font-size: 2.6rem;
-        line-height: 1.2;
-        text-align: center;
-    }
-
-    .panel-1-text p {
-        font-size: 1.1rem;
-    }
-
-    .buttons {
-        justify-content: center;
+        line-height: 1.1;
+        text-align: left;
+        margin-bottom: 0.5rem;
+        max-width: 100%;
     }
 
     .icon-logo {
+        grid-column: 2;
+        grid-row: 1;
         position: static;
-        width: 140px;
-        margin: 0 auto 1rem;
+        width: 160px;
+        margin: 0;
         display: block;
+        align-self: center;
+        /* Center icon vertically relative to H1 if desired, or start */
+    }
+
+    .panel-1-text p {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 1.1rem;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    .buttons {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        padding-right: 1.5rem;
     }
 
     /* PANEL 2 Y 3 */
@@ -1042,7 +1084,7 @@ nav a.ul-active {
     }
 
     .panel-stats {
-        padding: 5rem 1.5rem 6rem;
+        padding: 4rem 1.5rem 3rem;
         clip-path: polygon(0 0, 100% 10%, 100% 85%, 0 100%);
         margin-bottom: -2rem;
         position: relative;
@@ -1051,20 +1093,24 @@ nav a.ul-active {
 
     .stat-item {
         justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .stat-number {
         font-size: 3rem;
+        margin-bottom: 0;
+        line-height: 1;
     }
 
     .stat-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        line-height: 1.2;
     }
 
     .panel-community {
         background-color: var(--yellow);
-        padding: 8rem 1.5rem 5rem;
-        /* queda parejo con Panel 2 */
+        padding: 6rem 1.5rem 4rem;
         clip-path: polygon(0 15%, 100% 3%, 100% 100%, 0 100%);
         z-index: 1;
         position: relative;

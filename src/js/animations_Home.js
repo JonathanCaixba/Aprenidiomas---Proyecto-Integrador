@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.nav-menu');
     const overlay = document.querySelector('.menu-overlay');
     const body = document.body;
+    const html = document.documentElement;
 
     function toggleMenu() {
         // Alternar clases activas
@@ -61,11 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Lógica de Scroll Lock (Senior UX)
         if (navMenu.classList.contains('active')) {
-            body.style.overflow = 'hidden'; // Congela el fondo
-            hamburger.setAttribute('aria-expanded', 'true');
+            body.classList.add('no-scroll');
+            html.classList.add('no-scroll'); // Add to HTML too
+            // ...
         } else {
-            body.style.overflow = 'visible'; // Libera el fondo
-            hamburger.setAttribute('aria-expanded', 'false');
+            body.classList.remove('no-scroll');
+            html.classList.remove('no-scroll');
+            // ...
         }
     }
 
