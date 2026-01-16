@@ -44,6 +44,24 @@ html, body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
+}
+
 /* Animación de rebote del Logo */
 @keyframes logo-bounce {
 
