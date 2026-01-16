@@ -17,30 +17,13 @@
 }
 
 /* Estilos globales */
-body {
+html, body {
     font-family: 'Geom', sans-serif;
     background-color: var(--background);
     color: var(--black);
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-}
-
-/* Estilos del título con animación de letras */
-
-
-p,
-a {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: var(--white);
-}
-
-/* Estilos proximos Todavia no se usa un h2 */
-.quotes,
-h2 {
-    font-family: 'samurai blast', cursive;
-    color: var(--teal);
 }
 /* --- Navbar --- */
 * {
@@ -333,33 +316,28 @@ nav a.ul-active {
     font-weight: 800;
 }
 
-/* Footer */
+/* --- Footer --- */
 .main-footer {
     text-align: center;
     padding: 30px;
+    color: var(--white);
     font-size: 12px;
-    color: #888;
-    border-top: 1px solid #eee;
 }
 
-/* --- Estilos Base Navbar (Desktop First) --- */
-
-/* Ocultamos elementos móviles en desktop */
-.hamburger,
-.mobile-actions .menu-overlay {
-    display: none;
+.main-footer a {
+    color: var(--blue-marine);
+    text-decoration: none;
 }
 
-/* Navegación Desktop */
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.main-footer a:hover {
+    text-decoration: underline;
+    color: var(--teal);
 }
 
-/* --- RESPONSIVIDAD NIVEL SENIOR (Tablet/Móvil) --- */
+/* --- FIN Footer --- */
+
+/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
 @media (max-width: 992px) {
     .navbar {
         padding: 0.8rem 1.5rem;
@@ -440,62 +418,56 @@ nav a.ul-active {
         font-size: 1.1rem;
     }
 
-    /* Acciones dentro del menú móvil */
-    @media (max-width: 992px) {
 
-        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
-        .mobile-actions {
-            display: flex;
-            /* O block, según prefieras */
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 2rem;
-            /* Separación de los links */
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            /* Línea separadora elegante */
-            gap: 1.5rem;
-        }
 
-        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
-        .desktop-actions {
-            display: none;
-        }
-
-        /* Ajuste visual para los iconos en móvil */
-        .mobile-icons {
-            font-size: 1.8rem;
-            gap: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .full-width {
+    /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+    .mobile-actions {
+        display: flex;
+        /* O block, según prefieras */
+        flex-direction: column;
+        align-items: center;
         width: 100%;
-        text-align: center;
+        margin-top: 2rem;
+        /* Separación de los links */
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        /* Línea separadora elegante */
+        gap: 1.5rem;
     }
 
-    /* 3. Overlay (Fondo oscuro) */
-    .menu-overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(3px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s ease;
+    /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+    .desktop-actions {
+        display: none;
     }
 
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
+    /* Ajuste visual para los iconos en móvil */
+    .mobile-icons {
+        font-size: 1.8rem;
+        gap: 2rem;
+        display: flex;
+        justify-content: center;
     }
 }
-/* --- FIN RESPONSIVIDAD NAVBAR --- */
+
+/* 3. Overlay (Fondo oscuro) */
+.menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- FIN Responsividad Navbar --- */
