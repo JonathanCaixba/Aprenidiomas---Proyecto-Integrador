@@ -15,7 +15,7 @@
 
 <!-- CDN Fonts: Midorima (Personal Use) -->
 <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
-
+                
 <!-- CDN Fonts: Gang of Three -->
 <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
 </head>
@@ -91,16 +91,16 @@
 <!-- Formulario (Sección Izquierda) -->
     <section class="form-section">
       <div class="form-container">
-        <h1 class="form-title">CREA TU CUENTA</h1>
+        <h1 id="registro-titulo"class="form-title">CREA TU CUENTA</h1>
         <p class="form-subtitle">Únete a nuestros grupos y <br>
           forma parte de esta linda comunidad</p>
         
         <form class="registration-form">
           <div class="input-group">
-            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Nombre" name="nombre" autocomplete="given-name" required>
           </div>
           <div class="input-group">
-            <input type="text" placeholder="Apellido">
+            <input type="text" placeholder="Apellido" name="apellido" autocomplete="family-name" required>
           </div>
           <div class="input-group">
             <input type="email" placeholder="Email">
@@ -118,7 +118,7 @@
               <span>Quiero recibir información y ofertas especiales de Aprenidiomas por email</span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox">
+              <input type="checkbox" name="privacy" required>
               <span>Acepto el <a href="#">Aviso de Privacidad</a></span>
             </label>
           </div>
@@ -127,37 +127,46 @@
         </form>
       </div>
     </section>
-  <!-- Fin Formulario (Sección Izquierda) -->
+<!-- Fin Formulario (Sección Izquierda) -->
+
+<!-- FRANJA DIVISORA ENTRE IZQ Y DERECHA -->
+  <div class="vertical-divider"></div>
+
+<!-- FRANJA DIVISORA (VERSION MOBILE Y TABLETS) ENTRE SECCIONES AQUA E IMAGENES) -->
+  <div class="mobile-divider"></div>
   
-  <!-- DERECHA: Visual -->
+<!-- DERECHA: Visual -->
     <section class="visual-section">
     <div class="diagonal-split">
       <div class="img-left" style="background-image:url('src/assets/images/pexels-andy-barbour-6684506.jpg')"></div>
       <div class="img-right" style="background-image:url('src/assets/images/pexels-max-fischer-5212700.jpg')"></div>
     </div>
 
+<!-- FRANJA DIVISORA ENTRE IMGAGENES Y SECCION ROSA -->
+  <div class="horizontal-divider"></div>
+
 <!-- REDES SOCIALES CUADRO ROSA -->
 <div class="social-cta">
   <h3>Sigue la historia en nuestras redes</h3>
 
   <div class="social-icons">
-    <a href="https://www.instagram.com/aprenidiomas/" target="_blank" rel="noopener">
-      <img src="src/assets/icons/ig.svg" alt="Instagram" class="icon">
+    <a href="https://www.instagram.com/aprenidiomas/" target="_blank" rel="noopener noreferrer">
+      <img src="src/assets/icons/Instagram.svg" alt="Instagram" class="icon">
     </a>
 
-    <a href="https://www.tiktok.com/@aprenidiomas" target="_blank" rel="noopener">
-      <img src="src/assets/icons/tiktok.svg" alt="TikTok" class="icon">
+    <a href="https://www.tiktok.com/@aprenidiomas" target="_blank" rel="noopener noreferrer">
+      <img src="src/assets/icons/TikTok.svg" alt="TikTok" class="icon">
     </a>
 
-    <a href="https://www.facebook.com/AprenIdiomas" target="_blank" rel="noopener">
-      <img src="src/assets/icons/fb.svg" alt="Facebook" class="icon">
+    <a href="https://www.facebook.com/AprenIdiomas" target="_blank" rel="noopener noreferrer">
+      <img src="src/assets/icons/Facebook.svg" alt="Facebook" class="icon">
     </a>
   </div>
 
   <h3>O conversemos por whatsapp</h3>
 
-  <a href="https://wa.me/numerowhatsapp" target="_blank" rel="noopener">
-    <img src="src/assets/icons/whatsapp.svg" alt="WhatsApp" class="icon whatsapp">
+  <a href="https://wa.me/numerowhatsapp" target="_blank" rel="noopener noreferrer"">
+    <img src="src/assets/icons/WhatsApp.svg" alt="WhatsApp" class="icon whatsapp">
   </a>
 </section>
 <!-- FIN REDES SOCIALES CUADRO ROSA -->
