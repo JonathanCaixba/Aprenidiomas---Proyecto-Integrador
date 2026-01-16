@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprendiomas - SignUp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles_Signup.css">
+  <!-- Google Font: Questrial -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="#">
+        <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="nav-menu" id="main-menu">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html" data-link>INICIO</a></li>
+          <li><a href="#" data-link>CURSOS</a></li>
+          <li><a href="/about_us" data-link>NOSOTROS</a></li>
+          <li><a href="/community" data-link>COMUNIDAD</a></li>
+          <li><a href="#" data-link>TESTIMONIOS</a></li>
+          <li><a href="/contact_us" data-link>CONTACTO</a></li>
+          <li><a href="#" data-link>FAQ</a></li>
+
+          <li class="mobile-actions">
+            <button class="btn-enroll full-width" class="ul-active">¡Inscríbete!</button>
+            <div class="icons-nav mobile-icons">
+              <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-actions desktop-actions">
+      <button class="btn-enroll">¡Inscríbete!</button>
+      <div class="icons-nav">
+        <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay"></div>
+  <!-- FIN Navbar -->
+
+  <!--HERO -->
+  <section class="hero">
+    <!-- Formulario (Sección Izquierda) -->
+    <section class="form-section">
+      <div class="form-container">
+        <h1 id="registro-titulo" class="form-title">CREA TU CUENTA</h1>
+        <p class="form-subtitle">Únete a nuestros grupos y <br>
+          forma parte de esta linda comunidad</p>
+
+        <form class="registration-form">
+          <div class="input-group">
+            <input type="text" placeholder="Nombre" name="nombre" autocomplete="given-name" required>
+          </div>
+          <div class="input-group">
+            <input type="text" placeholder="Apellido" name="apellido" autocomplete="family-name" required>
+          </div>
+          <div class="input-group">
+            <input type="email" placeholder="Email">
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Contraseña">
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Confirmar Contraseña">
+          </div>
+
+          <div class="checkbox-group">
+            <label class="checkbox-item">
+              <input type="checkbox">
+              <span>Quiero recibir información y ofertas especiales de Aprenidiomas por email</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" name="privacy" required>
+              <span>Acepto el <a href="#">Aviso de Privacidad</a></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn-submit">Registrarme</button>
+        </form>
+      </div>
+    </section>
+    <!-- Fin Formulario (Sección Izquierda) -->
+
+    <!-- FRANJA DIVISORA ENTRE IZQ Y DERECHA -->
+    <div class="vertical-divider"></div>
+
+    <!-- FRANJA DIVISORA (VERSION MOBILE Y TABLETS) ENTRE SECCIONES AQUA E IMAGENES) -->
+    <div class="mobile-divider"></div>
+
+    <!-- DERECHA: Visual -->
+    <section class="visual-section">
+      <div class="diagonal-split">
+        <div class="img-left" style="background-image:url('../assets/images/pexels-andy-barbour-6684506.jpg')"></div>
+        <div class="img-right" style="background-image:url('../assets/images/pexels-max-fischer-5212700.jpg')"></div>
+      </div>
+
+      <!-- FRANJA DIVISORA ENTRE IMGAGENES Y SECCION ROSA -->
+      <div class="horizontal-divider"></div>
+
+      <!-- REDES SOCIALES CUADRO ROSA -->
+      <div class="social-cta">
+        <h3>Sigue la historia en nuestras redes</h3>
+
+        <div class="social-icons">
+          <a href="https://www.instagram.com/aprenidiomas/" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/icons/instagram.svg" alt="Instagram" class="icon">
+          </a>
+
+          <a href="https://www.tiktok.com/@aprenidiomas" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/icons/tiktok.svg" alt="TikTok" class="icon">
+          </a>
+
+          <a href="https://www.facebook.com/AprenIdiomas" target="_blank" rel="noopener noreferrer">
+            <img src="../assets/icons/facebook.svg" alt="Facebook" class="icon">
+          </a>
+        </div>
+
+        <h3>O conversemos por whatsapp</h3>
+
+        <a href="https://wa.me/numerowhatsapp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/icons/whatsapp.svg" alt="WhatsApp" class="icon whatsapp">
+        </a>
+    </section>
+    <!-- FIN REDES SOCIALES CUADRO ROSA -->
+
+  </section> <!-- FIN hero -->
+  <!-- Footer -->
+  <footer class="main-footer">
+    <a href="#">Términos y Condiciones | Aviso de Privacidad | © 2026 Aprenidiomas - Powered by NaN</a>
+  </footer>
+  <!-- FIN Footer -->
+
+  <script src="../js/animations_Signup.js" type="module"></script>
+
+</body>
+
+</html>
