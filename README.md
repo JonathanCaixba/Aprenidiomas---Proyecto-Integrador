@@ -116,7 +116,7 @@ Este proyecto utiliza un flujo de Integración y Despliegue Continuo para asegur
 | **Mari Paz** | Por definir |
 | **Enrique Berman** | Por definir |
 | **Johan Peña** | Por definir |
-| **Ángel Bracamontes** | Por definir |
+| **Ángel Bracamontes** | Por definir | www.linkedin.com/in/arturo-bracamontes
 
 ---
 
