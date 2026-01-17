@@ -1,10 +1,10 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/about_us", "destination": "/src/views/about_us.html" },
-    { "source": "/community", "destination": "/src/views/community.html" },
-    { "source": "/contact_us", "destination": "/src/views/contact_us.html" },
-    { "source": "/signup", "destination": "/src/views/signup.html" },
+    { "source": "/about_us", "destination": "/about.html" },
+    { "source": "/community", "destination": "/community.html" },
+    { "source": "/contact_us", "destination": "/contact.html" },
+    { "source": "/signup", "destination": "/signup.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
