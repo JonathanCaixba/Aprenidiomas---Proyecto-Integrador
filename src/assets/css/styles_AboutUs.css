@@ -1,753 +1,690 @@
-/* Variables para la paleta de colores (Home) */
 :root {
-    --light-yellow: #f1e3b4;
-    --white: #ffffff;
-    --yellow: #e8c86a;
-    --teal: #5aaaba;
-    --light-blue: #a3d4df;
-    --light-pink: #e9a5b4;
-    --pink: #d35a78;
-    --pink-shadow: #ff134e;
-    --gray: #595757;
-    --light-green: #e8e9c9;
-    --black: #000000;
-    --darkred: #8b0000;
-    --background: var(--white);
-    --blue-marine: #2a3b8f;
-    --yellow-shadow: #ffdd57;
+  --light-yellow: #f1e3b4;
+  --white: #ffffff;
+  --yellow: #e8c86a;
+  --teal: #5aaaba;
+  --light-blue: #a3d4df;
+  --light-pink: #e9a5b4;
+  --pink: #d35a78;
+  --pink-shadow: #ff134e;
+  --gray: #595757;
+  --light-green: #e8e9c9;
+  --black: #000000;
+  --darkred: #8b0000;
+  --background: var(--light-yellow);
+  --blue-marine: #2a3b8f;
+
+  /* Helper tokens */
+  --panel-pad: clamp(20px, 4vw, 64px);
+  --panel-radius: 0px;
+  --hero-avatar: clamp(72px, 7vw, 110px);
 }
 
-/* Estilos globales */
-html,
-body {
-    font-family: 'Geom', sans-serif;
-    background-color: var(--background);
-    color: var(--black);
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+/* --- Base --- */
+* { box-sizing: border-box; }
+
+html, body {
+  font-family: 'Geom', sans-serif;
+  background-color: #ffffff;
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evita scroll lateral por clip-path */
 }
 
-/* --- Navbar --- */
-* {
-    box-sizing: border-box;
+.page-content {
+  width: 100%;
 }
 
+/* --- Navbar (tu código casi igual) --- */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.2rem 4rem;
-    background-color: white;
-    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 4rem;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.mobile-actions {
-    display: none;
-}
-
-/* Mostramos las acciones de la barra superior */
 .desktop-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-/* Ocultamos elementos móviles por defecto */
 .hamburger,
 .mobile-actions,
 .menu-overlay {
-    display: none;
+  display: none;
 }
 
-.nav-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Animación de rebote del Logo */
 @keyframes logo-bounce {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    30% {
-        transform: scale(1.2) rotate(-5deg);
-    }
-
-    50% {
-        transform: scale(0.9) rotate(5deg);
-    }
-
-    80% {
-        transform: scale(1.1);
-    }
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.2) rotate(-5deg); }
+  50% { transform: scale(0.9) rotate(5deg); }
+  80% { transform: scale(1.1); }
 }
 
-.animate-logo {
-    animation: logo-bounce 0.8s ease-in-out;
-}
+.animate-logo { animation: logo-bounce 0.8s ease-in-out; }
 
 .logo {
-    width: 70px;
-    height: 70px;
-    margin-right: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+  width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.logo:hover {
-    transform: scale(1.1) rotate(5deg);
-}
+.logo:hover { transform: scale(1.1) rotate(5deg); }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
-    color: var(--teal);
-    text-decoration: none;
-    font-family: 'Geom', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
+  color: var(--teal);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--pink);
-}
+nav a:hover { color: var(--pink); }
 
 nav a.ul-active {
-    color: var(--pink-shadow);
-    font-weight: bold;
-    border-bottom: 2px solid var(--pink-shadow);
-    padding-bottom: 4px;
+  color: var(--pink-shadow);
+  font-weight: bold;
+  border-bottom: 2px solid var(--pink-shadow);
+  padding-bottom: 4px;
 }
 
 .nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
 }
 
-/* Botón Inscribirse */
 .btn-enroll {
-    background-color: var(--teal);
-    color: var(--white);
-    border: none;
-    padding: 0.6rem 2rem;
-    border-radius: 50px 20px 20px 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 50px 20px 20px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-enroll:hover {
-    background-color: var(--light-pink);
-    transform: scale(1.05);
-    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: var(--light-pink);
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .icons-nav {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
-.mobile-actions {
-    display: none;
+.icons-nav img {
+  width: 28px;
+  height: 28px;
+  display: block;
 }
 
-/* --- FIN Navbar --- */
-
-/* --- Sección de Información (Panel 1 y 2 AboutUs) --- */
+/* --- Paneles superiores --- */
 .hero-panels {
-    position: relative;
-    width: 100vw;
-    height: 47vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    overflow: visible;
-    z-index: 0;
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: clamp(340px, 46vh, 520px);
 }
 
-/* PANEL IZQUIERDO */
 .panel-left-top {
-    background: #5ba8b7;
-    padding: 60px;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
+  background: #5ba8b7;
+  padding: var(--panel-pad);
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.hero-text- {
-    color: #30317c;
-    font-size: 16px;
-    max-width: 420px;
-    line-height: 1.6;
-}
-
-/* PANEL DERECHO */
 .panel-right-top {
-    position: relative;
-    background: #e9c86b;
-    padding: 60px;
-    color: white;
-    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 2;
+  background: #e9c86b;
+  padding: var(--panel-pad);
+  color: white;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
 }
 
-/* H2 */
 .panel-right-top h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+  font-size: clamp(22px, 2vw, 32px);
+  margin: 0 0 10px;
+  line-height: 1.1;
 }
 
-/* Frases independientes */
 .texto-aprender,
 .texto-ensenar {
-    font-family: "Questrial", sans-serif;
-    display: inline-block;
-    transition: transform 0.3s ease;
+  font-family: "Questrial", sans-serif;
+  display: inline-block;
 }
 
-.texto-ensenar {
-    font-size: 32px;
-}
+.texto-ensenar { font-size: clamp(20px, 2vw, 32px); }
 
 .texto-crecer,
 .texto-transformar {
-    font-family: "Midorima - Personal Use", sans-serif;
-    display: inline-block;
-    transition: transform 0.3s ease;
+  font-family: "Midorima - Personal Use", sans-serif;
+  display: inline-block;
 }
 
-.texto-transformar {
-    font-size: 40px;
-}
+.texto-transformar { font-size: clamp(26px, 2.6vw, 40px); }
 
-/* Párrafo */
 .panel-right-top p {
-    font-size: 16px;
-    margin-bottom: 20px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  margin: 0 0 20px;
 }
 
-/* BOTONES */
 .hero-buttons {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-.btn-cursos {
-    background: #5baabb;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
-}
-
+.btn-cursos,
 .btn-inscribete {
-    background: #d8637a;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 30px;
-    color: white;
-    cursor: pointer;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
 }
 
-/* Imagen */
+.btn-cursos { background: #5baabb; }
+.btn-inscribete { background: #d8637a; }
 
+/* Mover el circulito al área del círculo rojo */
 .hero-image {
-    position: absolute;
-
-    top: 60%;
-    left: 45%;
-
-    transform: translate(50%, -110%);
-    z-index: 1;
+  position: absolute;
+  left: clamp(52%, 56vw, 50%);  /* ajusta si lo quieres más a la izq/der */
+  top: clamp(80px, 18vh, 140px);/* ajusta si lo quieres más arriba/abajo */
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  pointer-events: none;
 }
+
 
 .hero-image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: white;
+  width: var(--hero-avatar);
+  height: var(--hero-avatar);
+  border-radius: 50%;
+  object-fit: cover;
+  background: white;
 }
 
-/* CARRUSEL TEXTO – PANEL IZQUIERDO */
+/* --- Texto carrusel --- */
 .text-carousel {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-/* CARRUSEL TEXTO – PANEL IZQUIERDO */
-.text-carousel {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-/* CONTENEDOR DEL TEXTO */
 .text-carousel-window {
-    position: relative;
-    overflow: hidden;
-    max-width: 500px;
-    width: 90%;
-    box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  width: min(560px, 100%);
 }
 
-/* TRACK */
 .text-carousel-track {
-    display: flex;
-    transition: transform 0.45s ease;
+  display: flex;
+  transition: transform 0.45s ease;
 }
 
-/* SLIDE */
-.text-slide {
-    flex: 0 0 100%;
-    padding: 0 50px;
-    /* espacio interno para flechas */
-    box-sizing: border-box;
+.text-slide{
+  flex: 0 0 100%;
+  padding-left: clamp(40px, 5vw, 56px);
+  padding-right: clamp(40px, 5vw, 56px);
 }
 
-/* Encabezado pequeño */
 .text-slide h3 {
-    font-family: "Gang of Three", sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 8px;
+  font-family: "Gang of Three", sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 8px;
 }
 
-/* Encabezado grande */
 .text-slide h2 {
-    font-family: "Gang of Three", sans-serif;
-    /*  fuente para títulos grandes */
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-    margin-bottom: 12px;
-    line-height: 1.2;
+  font-family: "Gang of Three", sans-serif;
+  font-size: clamp(16px, 1.4vw, 20px);
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.2;
 }
 
-/* Párrafo */
 .text-slide p {
-    font-family: "Questrial", sans-serif;
-    /* fuente para párrafos */
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
-    line-height: 1.5;
+  font-family: "Questrial", sans-serif;
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.5;
+  margin: 0;
 }
 
-/* FLECHAS */
 .text-prev,
 .text-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 36px;
-    color: white;
-    cursor: pointer;
-    z-index: 5;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: clamp(26px, 3vw, 36px);
+  color: white;
+  cursor: pointer;
+  z-index: 5;
 }
 
-.text-prev {
-    left: 0;
+.text-prev{
+  left: clamp(8px, 1vw, 14px);
 }
 
-.text-next {
-    right: 0;
+.text-next{
+  right: clamp(8px, 1vw, 14px);
 }
 
 .text-prev:hover,
-.text-next:hover {
-    opacity: 0.7;
-}
+.text-next:hover { opacity: 0.7; }
 
-/* Espacio entre secciones */
-.section-gap {
-    height: 4vh;
-}
+.section-gap { height: clamp(16px, 3vh, 36px); }
 
-/* SECCIÓN IMPACTO */
+/* --- Paneles inferiores --- */
 .panels-3-4 {
-    overflow: hidden;
-    height: 42vh;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    background: white;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  min-height: clamp(280px, 32vh, 420px);
+  background: white;
 }
 
-/* PANEL IZQUIERDO */
 .left-panel {
-    background: #d8637a;
-    padding: 40px;
-    clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
-    position: relative;
+  background: #d8637a;
+  padding: clamp(18px, 3vw, 44px);
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-/* TEXTOS PANEL IZQUIERDO */
-.text {
-    position: absolute;
-    color: white;
+.impact {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: clamp(8px, 1.2vh, 14px);
+  justify-items: center; 
 }
 
-.t1,
-.t2 {
-    font-family: "Midorima - Personal Use", sans-serif;
-    color: #30317c;
+
+.impact-header {
+  position: relative;
+  text-align: center;
+  /* Desktop: que el header mida lo que ocupan sus líneas (para colocar el abanico a la derecha sin tapar texto) */
+  width: fit-content;
+  margin-inline: auto;
 }
 
-.t1 {
-    font-size: 55px;
-    transform: translate(450px, 30px);
+.impact-kicker {
+  font-family: "Questrial", sans-serif;
+  font-size: clamp(14px, 1.8vw, 26px);
+  letter-spacing: 0.22em;
+  margin: 0;
+  color: #fff;
 }
 
-.t2 {
-    font-size: 55px;
-    transform: translate(250px, 30px);
+.impact-title {
+  font-family: "Gang of Three", sans-serif;
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: 0.22em;
+  margin: 6px 0 0;
+  color: #fff;
 }
 
-/* Grupo 2 – misma fuente */
-.t3,
-.t4 {
-    font-family: "Questrial", serif;
-    color: #30317c;
-}
-
-.t3 {
-    font-size: 12px;
-    transform: translate(450px, 140px);
-}
-
-.t4 {
-    font-size: 12px;
-    transform: translate(180px, 140px);
-}
-
-.t5,
-.t6,
-.t8 {
-    font-family: "Questrial", monospace;
-}
-
-.t5 {
-    font-size: 25px;
-    letter-spacing: 4px;
-    transform: translate(270px, -25px);
-}
-
-.t6 {
-    font-size: 12px;
-    transform: translate(150px, 215px);
-}
-
-.t7 {
-    font-family: "Gang of Three", sans-serif;
-    font-size: 38px;
-    letter-spacing: 4px;
-    transform: translate(280px, -22px);
-}
-
-.t8 {
-    font-size: 12px;
-    transform: translate(225px, 225px);
-}
-
-/* LÍNEA VERTICAL */
-.vertical-line {
-    position: absolute;
-    width: 3px;
-    /* grosor de la línea */
-    height: 110px;
-    /* altura */
-    background-color: #30317c;
-
-    /* POSICIÓN MANUAL */
-    left: 410px;
-    top: 410px;
-    border-radius: 2px;
-    /* Esquinas suaves */
-}
-
-.fan-sticker {
-    position: absolute;
-    z-index: 1;
-    rotate: (10deg);
-    transform: translate(600px, -20px);
+.fan-sticker{
+  position: absolute;
+  /* Desktop: colócalo a la derecha del texto "Nuestro impacto en / CRECIMIENTO" */
+  left: 100%;
+  right: auto;
+  top: 50%;
+  transform: translate(clamp(10px, 1.2vw, 18px), -50%) rotate(10deg);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .fan-sticker img {
-    width: 130px;
-    height: 130px;
+  width: clamp(88px, 9vw, 130px);
+  height: auto;
 }
 
-/* PANEL DERECHO */
+.impact-stats {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: start;
+  gap: clamp(10px, 2vw, 22px);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-family: "Midorima - Personal Use", sans-serif;
+  color: #30317c;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1;
+}
+
+.stat-text {
+  font-family: "Questrial", sans-serif;
+  color: #30317c;
+  font-size: clamp(11px, 1.1vw, 13px);
+  margin: 12px 0 0;
+  line-height: 1.35;
+}
+
+.impact-divider {
+  width: 3px;
+  height: clamp(80px, 12vh, 120px);
+  background-color: #30317c;
+  border-radius: 2px;
+  margin-top: clamp(6px, 1vh, 10px);
+}
+
+.impact-footnote,
+.impact-subnote {
+  font-family: "Questrial", sans-serif;
+  color: #fff;
+  font-size: clamp(11px, 1.1vw, 13px);
+  margin: 0;
+  text-align: center;
+}
+
+.impact-subnote { opacity: 0.95; }
+
+/* Panel derecho (carrusel alumnos) */
 .right-panel {
-    margin-left: -4vw;
-    background: #efb0bb;
-    padding: 20px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    text-align: center;
-    clip-path: polygon(21% 0, 100% 0, 100% 100%, 0 100%);
+  background: #efb0bb;
+  padding: clamp(16px, 2vw, 26px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
 }
 
-/* TÍTULO DEL CARRUSEL */
+/* Solo en desktop (cuando aún están en 2 columnas) */
+@media (min-width: 901px) {
+  .panels-3-4 {
+    --join: clamp(18px, 3vw, 70px); /* <- ajusta este valor */
+  }
+
+  .left-panel {
+    position: relative;
+    z-index: 2; /* queda “encima” */
+  }
+
+  .right-panel {
+    margin-left: calc(-3 * var(--join)); /* <- acerca panel 4 al 3 */
+    position: relative;
+    z-index: 1;
+  }
+}
+
+
 .right-panel h3 {
-    font-size: 20px;
-    margin-bottom: 4px;
-    transform: translate(25px, -5px);
+  font-size: clamp(18px, 2vw, 22px);
+  margin: 0 0 12px;
+  color: #111;
 }
 
-/* CARRUSEL */
 .carousel-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    transform: translate(18px, 0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .carousel-wrapper button {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 
-.carousel-wrapper button:hover {
-    opacity: 0.7;
-}
+.carousel-wrapper button:hover { opacity: 0.7; }
 
-/* Ventana circular */
 .carousel {
-    flex-shrink: 0;
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 50%;
+  flex-shrink: 0;
+  width: clamp(120px, 14vw, 150px);
+  height: clamp(120px, 14vw, 150px);
+  overflow: hidden;
+  border-radius: 50%;
 }
 
-/* Track */
 .carousel-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.45s ease;
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s ease;
 }
 
-/* Imágenes */
 .carousel-track img {
-    min-width: 100%;
-    height: 100%;
-    object-fit: cover;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* --- Footer --- */
 .main-footer {
-    text-align: center;
-    padding: 30px;
-    color: var(--white);
-    font-size: 12px;
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
 }
 
 .main-footer a {
-    color: var(--blue-marine);
-    text-decoration: none;
+  color: var(--blue-marine);
+  text-decoration: none;
 }
 
 .main-footer a:hover {
-    text-decoration: underline;
-    color: var(--teal);
+  text-decoration: underline;
+  color: var(--teal);
 }
 
 /* --- FIN Footer --- */
 
-/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
-/* Sección Navbar */
-@media (max-width: 992px) {
-    .navbar {
-        padding: 0.8rem 1.5rem;
-        /* Padding reducido */
-    }
-
-    /* Ocultamos las acciones de escritorio */
-    .desktop-only {
-        display: none;
-    }
-
-    /* 1. Botón Hamburguesa */
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 21px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 1002;
-        /* Encima de todo */
-        padding: 0;
-    }
-
-    .hamburger .bar {
-        width: 100%;
-        height: 3px;
-        background-color: var(--pink);
-        border-radius: 3px;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-    }
-
-    /* Animación Cruz (X) perfecta */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-        /* La del medio desaparece */
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
-    }
-
-    /* 2. El Menú Lateral (Drawer) */
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        /* Escondido a la derecha */
-        width: 75%;
-        max-width: 300px;
-        height: 100vh;
-        background-color: white;
-        padding: 6rem 2rem 2rem;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1001;
-        overflow-y: auto;
-        /* Permite scroll si el menú es muy alto */
-    }
-
-    .nav-menu.active {
-        right: 0;
-        /* Entra a la pantalla */
-    }
-
-    /* Estilos de enlaces en móvil */
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        /* Centrados o flex-start */
-        gap: 2rem;
-        font-size: 1.1rem;
-    }
-
-    /* Acciones dentro del menú móvil */
-    @media (max-width: 992px) {
-
-        /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
-        .mobile-actions {
-            display: flex;
-            /* O block, según prefieras */
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            margin-top: 2rem;
-            /* Separación de los links */
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            /* Línea separadora elegante */
-            gap: 1.5rem;
-        }
-
-        /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
-        .desktop-actions {
-            display: none;
-        }
-
-        /* Ajuste visual para los iconos en móvil */
-        .mobile-icons {
-            font-size: 1.8rem;
-            gap: 2rem;
-            display: flex;
-            justify-content: center;
-        }
-    }
-
-    .full-width {
-        width: 40%;
-        text-align: center;
-    }
-
-    /* 3. Overlay (Fondo oscuro) */
-    .menu-overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(3px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: 0.3s ease;
-    }
-
-    .menu-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
+/* --- Breakpoints --- */
+@media (max-width: 1200px) {
+  .navbar { padding: 0.8rem 2rem; }
 }
 
-/* --- FIN Responsividad Navbar --- */
+/* Tablet / laptop */
+@media (max-width: 900px) {
+  .hero-panels {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
 
-/* --- RESPONSIVIDAD PANELES 1 y 2 ASISTIDO CON IA (ABOUT US) --- */
+  .panel-left-top {
+    clip-path: none;
+    padding-bottom: calc(var(--panel-pad) + (var(--hero-avatar) / 2));
+  }
 
-/* --- FIN Responsividad Panel 1 y 2 AboutUs --- */
+  .panel-right-top {
+    clip-path: none;
+    padding-top: calc(var(--panel-pad) + (var(--hero-avatar) / 2));
+  }
+
+  .panels-3-4 {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    clip-path: none;
+  }
+
+  .right-panel { padding-top: 24px; }
+
+  /* Evita que el logo se encime en móvil/tablet: ahora fluye entre paneles */
+  .hero-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: calc(var(--hero-avatar) * -0.5);
+    margin-bottom: calc(var(--hero-avatar) * -0.5);
+  }
+
+  /* En tablet/phone NO mostramos el abanico */
+  .fan-sticker {
+    display: none !important;
+  }
+
+}
+
+/* --- Telefono --- */
+@media (max-width: 560px) {
+  .navbar { padding: 0.8rem 1.2rem; }
+
+  .impact-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .impact-divider { display: none; }
+
+  /* En teléfono NO mostramos el abanico */
+  .fan-sticker {
+    display: none !important;
+  }
+
+}
+
+/* --- Responsividad Navbar --- */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    padding: 0;
+  }
+
+  .hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--pink);
+    border-radius: 3px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  }
+
+  .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: white;
+    padding: 6rem 2rem 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  .nav-menu.active { right: 0; }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-size: 1.1rem;
+  }
+
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    gap: 1.5rem;
+  }
+
+  .desktop-actions { display: none; }
+
+  .mobile-icons {
+    font-size: 1.8rem;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.menu-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (min-width: 901px){
+  .right-panel{
+    padding-left: clamp(145px, 3vw, 60px); 
+  }
+}
