@@ -379,10 +379,11 @@ nav a.ul-active {
     .visual-panel {
         width: 50%;
         height: 100%;
-        display: flex;
+        display: grid;
+        
     }
 
-    .top-pic { height: 75%; }
+    .top-pic { height: 118%; }
     .bottom-pic {  
         height: 10%;
         margin-top: 50px;
@@ -394,8 +395,19 @@ nav a.ul-active {
         z-index: 10;
         gap: 10px;
     }
+    
+    .section2{
+        margin-top: 13%;
+        height: 70%;
+        background-image: url("../images/ninapc.jpg");
+        width: 97%;
+        background-size: cover; 
+        background-position: center 35%;
+    background-repeat: no-repeat;
+    }
     .img-container1{
-         
+         background-color: red;
+         margin-top: 50rem;
     }
     
     .yellow-wedge-container {
