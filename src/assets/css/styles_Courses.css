@@ -1,0 +1,591 @@
+:root {
+  --light-yellow: #f1e3b4;
+  --white: #ffffff;
+  --yellow: #e8c86a;
+  --teal: #5aaaba;
+  --light-blue: #a3d4df;
+  --light-pink: #e9a5b4;
+  --pink: #d35a78;
+  --pink-shadow: #ff134e;
+  --gray: #595757;
+  --light-green: #e8e9c9;
+  --black: #000000;
+  --darkred: #8b0000;
+  --background: var(--light-yellow);
+  --blue-marine: #2a3b8f;
+  --dark-blue: #30317c;
+}
+
+/* Estilos globales */
+html,
+body {
+  font-family: "Geom", sans-serif;
+  background-color: #ffffff;
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 4rem;
+  background-color: white;
+  /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+  display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+  display: none;
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-logo {
+  animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: var(--teal);
+  text-decoration: none;
+  font-family: "Geom", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--pink);
+}
+
+nav a.ul-active {
+  color: var(--pink-shadow);
+  font-weight: bold;
+  border-bottom: 2px solid var(--pink-shadow);
+  padding-bottom: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+  background-color: var(--teal);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 50px 20px 20px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+  background-color: var(--light-pink);
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Cursos */
+.btn-courses {
+  background-color: var(--pink);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-courses:hover {
+  background-color: var(--pink-shadow);
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icons-nav img {
+  width: 28px;
+  height: 28px;
+  display: block;
+}
+
+/* --- FIN Navbar --- */
+
+/* --- Footer --- */
+.main-footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--white);
+  font-size: 12px;
+}
+
+.main-footer a {
+  color: var(--blue-marine);
+  text-decoration: none;
+}
+
+.main-footer a:hover {
+  text-decoration: underline;
+  color: var(--teal);
+}
+
+/* --- FIN Footer --- */
+
+/* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
+/* Sección Navbar */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0.8rem 1.5rem;
+    /* Padding reducido */
+  }
+
+  /* Ocultamos las acciones de escritorio */
+  .desktop-only {
+    display: none;
+  }
+
+  /* 1. Botón Hamburguesa */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1002;
+    /* Encima de todo */
+    padding: 0;
+  }
+
+  .hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--pink);
+    border-radius: 3px;
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.3s ease;
+  }
+
+  /* Animación Cruz (X) perfecta */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    /* La del medio desaparece */
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* 2. El Menú Lateral (Drawer) */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* Escondido a la derecha */
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: white;
+    padding: 6rem 2rem 2rem;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    overflow-y: auto;
+    /* Permite scroll si el menú es muy alto */
+  }
+
+  .nav-menu.active {
+    right: 0;
+    /* Entra a la pantalla */
+  }
+
+  /* Estilos de enlaces en móvil */
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    /* Centrados o flex-start */
+    gap: 2rem;
+    font-size: 1.1rem;
+  }
+
+  /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+  .mobile-actions {
+    display: flex;
+    /* O block, según prefieras */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    /* Separación de los links */
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    /* Línea separadora elegante */
+    gap: 1.5rem;
+  }
+
+  /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+  .desktop-actions {
+    display: none;
+  }
+
+  /* Ajuste visual para los iconos en móvil */
+  .mobile-icons {
+    font-size: 1.8rem;
+    gap: 2rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* 3. Overlay (Fondo oscuro) */
+.menu-overlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- FIN Responsividad Navbar --- */
+
+/* --- Inicio Estilos para Courses --- */
+html,
+body {
+  min-height: 100vh;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main.container-courses {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 1fr minmax(auto, 200px);
+  gap: 32px 0;
+}
+
+section.courses-product-section {
+  grid-column: 1 / -1;
+  height: 100%;
+  background-color: #d35a78;
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  padding: 1rem 0;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 8px;
+  color: var(--white);
+  height: 100%;
+  justify-content: space-evenly;
+  flex: 1 1 300px;
+  max-width: 100%;
+}
+.courses-img {
+  object-fit: cover;
+  max-height: 250px;
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 32px 32px 32px 16px;
+}
+
+article.course > header > h1.course-header {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--white);
+  text-align: center;
+  border-bottom: 2px solid var(--white);
+}
+
+article.course > div.course-financing {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+article.course > div.course-financing > div.buttons > .btn-courses {
+  border-radius: 32px;
+  border-color: transparent;
+  background-color: var(--yellow);
+  color: var(--white);
+}
+article.course > div.course-financing > div.buttons > .btn-courses.outline {
+  color: var(--dark-blue);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+article.course > div.course-financing > p {
+  margin: 0;
+}
+
+div.course-reviews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+p.course-description {
+  min-height: 80px;
+}
+
+section.courses-explore-container {
+  grid-row-start: 2;
+  grid-column: 1 / 5;
+  background-color: var(--light-yellow);
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+  margin-right: -2rem;
+  z-index: 1;
+  color: var(--dark-blue);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+
+section.courses-explore-container > h6 {
+  font-size: 1.9rem;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+section.courses-explore-container > .courses-links-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+section.courses-explore-container > .courses-links-container > a.badge {
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 32px;
+  font-size: 0.625rem;
+}
+
+section.courses-socials {
+  background-color: var(--teal);
+  clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
+  grid-column: 5 / 9;
+  grid-row-start: 2;
+  grid-column-start: 5;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+section.courses-socials > p {
+  margin: 8px;
+  font-size: 1.875rem;
+  text-align: center;
+}
+
+div.courses-socials-icons {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  justify-content: center;
+}
+
+div.courses-socials-icons > img.icon {
+  width: 32px;
+  height: 32px;
+  position: initial !important;
+}
+
+@media (max-width: 767px) {
+  main.container-courses {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  section.courses-product-section {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+  section.courses-explore-container,
+  section.courses-socials {
+    clip-path: none;
+    margin-right: 0;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  div.courses-links-container {
+    flex-wrap: wrap;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article.course {
+    margin-bottom: 1.5rem;
+  }
+
+  article.course > header > h1.course-header {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  section.courses-explore-container > .courses-links-container > .badge {
+    padding: 1rem;
+  }
+
+  section.courses-socials > p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1200px) {
+  section.courses-explore-container > h6 {
+    font-size: 1rem;
+  }
+  section.courses-explore-container > .courses-links-container {
+    flex-wrap: wrap;
+  }
+  section.courses-explore-container > .courses-links-container > a.badge {
+    width: fit-content;
+  }
+  section.courses-socials > p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  section.courses-explore-container > h6 {
+    font-size: 1.5rem;
+    text-align: initial;
+  }
+
+  section.courses-explore-container > .courses-links-container {
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+
+  section.courses-socials > p {
+    font-size: 1.2rem;
+    text-align: end;
+  }
+}
+/* --- Fin Estilos para courses --- */
