@@ -2,10 +2,25 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/about_us", "destination": "/src/views/about_us.html" },
-    { "source": "/community", "destination": "/src/views/community.html" },
-    { "source": "/contact_us", "destination": "/src/views/contact_us.html" },
-    { "source": "/signup", "destination": "/src/views/signup.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/about.us",
+      "destination": "/src/views/about.us"
+    },
+    {
+      "source": "/community",
+      "destination": "/src/views/community"
+    },
+    {
+      "source": "/contact.us",
+      "destination": "/src/views/contact.us"
+    },
+    {
+      "source": "/signup",
+      "destination": "/src/views/signup"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
