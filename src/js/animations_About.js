@@ -2,19 +2,33 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const logo = document.querySelector(".logo");
+    const video = document.querySelector("#parrot-video");
 
-    // Función para activar la animación
+    // Función para activar la animación del logo
     const triggerAnimation = () => {
         logo.classList.remove("animate-logo");
         void logo.offsetWidth;
         logo.classList.add("animate-logo");
     };
 
-    // 1. Acción al cargar la página
+    // 1. Acción al cargar la página para el logo
     triggerAnimation();
 
-    // 2. Acción al hacer clic
+    // 2. Acción al hacer clic en el logo
     logo.addEventListener("click", triggerAnimation);
+
+    // Control del video: reproducir al cargar y loop con delay de 30 segundos
+    const playVideoWithDelay = () => {
+        video.play();  // Reproduce el video
+    };
+
+    // Inicia el video al cargar la página
+    playVideoWithDelay();
+
+    // Al terminar el video, espera 20 segundos y reproduce de nuevo
+    video.addEventListener("ended", () => {
+        setTimeout(playVideoWithDelay, 20000);  // 20000 ms = 20 segundos
+    });
 });
 
 // Lógica del menú hamburguesa
