@@ -17,19 +17,23 @@
   /* Helper tokens */
   --panel-pad: clamp(20px, 4vw, 64px);
   --panel-radius: 0px;
-  --hero-avatar: clamp(72px, 7vw, 110px);
+  --hero-avatar: clamp(152px, 7vw, 110px);
 }
 
 /* --- Base --- */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body {
+html,
+body {
   font-family: 'Geom', sans-serif;
   background-color: #ffffff;
   color: var(--black);
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* evita scroll lateral por clip-path */
+  overflow-x: hidden;
+  /* evita scroll lateral por clip-path */
 }
 
 .page-content {
@@ -63,13 +67,28 @@ html, body {
 }
 
 @keyframes logo-bounce {
-  0%, 100% { transform: scale(1); }
-  30% { transform: scale(1.2) rotate(-5deg); }
-  50% { transform: scale(0.9) rotate(5deg); }
-  80% { transform: scale(1.1); }
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+
+  50% {
+    transform: scale(0.9) rotate(5deg);
+  }
+
+  80% {
+    transform: scale(1.1);
+  }
 }
 
-.animate-logo { animation: logo-bounce 0.8s ease-in-out; }
+.animate-logo {
+  animation: logo-bounce 0.8s ease-in-out;
+}
 
 .logo {
   width: 70px;
@@ -79,7 +98,9 @@ html, body {
   transition: transform 0.2s ease;
 }
 
-.logo:hover { transform: scale(1.1) rotate(5deg); }
+.logo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
 
 nav ul {
   display: flex;
@@ -98,7 +119,9 @@ nav a {
   transition: color 0.3s ease;
 }
 
-nav a:hover { color: var(--pink); }
+nav a:hover {
+  color: var(--pink);
+}
 
 nav a.ul-active {
   color: var(--pink-shadow);
@@ -186,7 +209,9 @@ nav a.ul-active {
   display: inline-block;
 }
 
-.texto-ensenar { font-size: clamp(20px, 2vw, 32px); }
+.texto-ensenar {
+  font-size: clamp(20px, 2vw, 32px);
+}
 
 .texto-crecer,
 .texto-transformar {
@@ -194,7 +219,9 @@ nav a.ul-active {
   display: inline-block;
 }
 
-.texto-transformar { font-size: clamp(26px, 2.6vw, 40px); }
+.texto-transformar {
+  font-size: clamp(26px, 2.6vw, 40px);
+}
 
 .panel-right-top p {
   font-size: clamp(14px, 1.2vw, 16px);
@@ -207,23 +234,51 @@ nav a.ul-active {
   gap: 12px;
 }
 
-.btn-cursos,
-.btn-inscribete {
+.btn-cursos {
+  background-color: var(--teal);
+  color: var(--white);
   border: none;
-  padding: 10px 25px;
-  border-radius: 30px;
-  color: white;
+  font-size: 1rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn-cursos { background: #5baabb; }
-.btn-inscribete { background: #d8637a; }
+.btn-cursos:hover {
+  background-color: var(--pink);
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-inscribete {
+  background-color: var(--pink);
+  color: white;
+  font-family: 'Geom', sans-serif;
+  font-size: 1rem;
+  padding: 0.9rem 3.2rem;
+  border: none;
+  border-radius: 50px 20px 20px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-inscribete:hover {
+  background-color: var(--pink-shadow);
+  transform: scale(1.05);
+  box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
 
 /* Mover el circulito al área del círculo rojo */
 .hero-image {
   position: absolute;
-  left: clamp(52%, 56vw, 50%);  /* ajusta si lo quieres más a la izq/der */
-  top: clamp(80px, 18vh, 140px);/* ajusta si lo quieres más arriba/abajo */
+  left: clamp(52%, 56vw, 50%);
+  /* ajusta si lo quieres más a la izq/der */
+  top: clamp(80px, 18vh, 140px);
+  /* ajusta si lo quieres más arriba/abajo */
   transform: translate(-50%, -50%);
   z-index: 3;
   pointer-events: none;
@@ -236,6 +291,33 @@ nav a.ul-active {
   border-radius: 50%;
   object-fit: cover;
   background: white;
+}
+
+/* --- Sticker del Loro (Video) --- */
+.parrot-sticker {
+  position: absolute;
+  top: 5rem;
+  left: 54%;
+  transform: translateX(-50%);
+  z-index: 10;
+  width: var(--hero-avatar);
+  height: var(--hero-avatar);
+  /* Importante: Misma altura que ancho para ser círculo */
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+
+  /* Sombra para darle profundidad (efecto sticker) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+/* Estilo para la etiqueta VIDEO dentro del sticker */
+.parrot-sticker video {
+  width: var(--hero-avatar);
+  height: var(--hero-avatar);
+  object-fit: cover;
+  display: block;
 }
 
 /* --- Texto carrusel --- */
@@ -257,7 +339,7 @@ nav a.ul-active {
   transition: transform 0.45s ease;
 }
 
-.text-slide{
+.text-slide {
   flex: 0 0 100%;
   padding-left: clamp(40px, 5vw, 56px);
   padding-right: clamp(40px, 5vw, 56px);
@@ -302,18 +384,22 @@ nav a.ul-active {
   z-index: 5;
 }
 
-.text-prev{
+.text-prev {
   left: clamp(8px, 1vw, 14px);
 }
 
-.text-next{
+.text-next {
   right: clamp(8px, 1vw, 14px);
 }
 
 .text-prev:hover,
-.text-next:hover { opacity: 0.7; }
+.text-next:hover {
+  opacity: 0.7;
+}
 
-.section-gap { height: clamp(16px, 3vh, 36px); }
+.section-gap {
+  height: clamp(16px, 3vh, 36px);
+}
 
 /* --- Paneles inferiores --- */
 .panels-3-4 {
@@ -337,7 +423,7 @@ nav a.ul-active {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: clamp(8px, 1.2vh, 14px);
-  justify-items: center; 
+  justify-items: center;
 }
 
 
@@ -365,7 +451,7 @@ nav a.ul-active {
   color: #fff;
 }
 
-.fan-sticker{
+.fan-sticker {
   position: absolute;
   /* Desktop: colócalo a la derecha del texto "Nuestro impacto en / CRECIMIENTO" */
   left: 100%;
@@ -424,7 +510,9 @@ nav a.ul-active {
   text-align: center;
 }
 
-.impact-subnote { opacity: 0.95; }
+.impact-subnote {
+  opacity: 0.95;
+}
 
 /* Panel derecho (carrusel alumnos) */
 .right-panel {
@@ -441,16 +529,19 @@ nav a.ul-active {
 /* Solo en desktop (cuando aún están en 2 columnas) */
 @media (min-width: 901px) {
   .panels-3-4 {
-    --join: clamp(18px, 3vw, 70px); /* <- ajusta este valor */
+    --join: clamp(18px, 3vw, 70px);
+    /* <- ajusta este valor */
   }
 
   .left-panel {
     position: relative;
-    z-index: 2; /* queda “encima” */
+    z-index: 2;
+    /* queda “encima” */
   }
 
   .right-panel {
-    margin-left: calc(-3 * var(--join)); /* <- acerca panel 4 al 3 */
+    margin-left: calc(-3 * var(--join));
+    /* <- acerca panel 4 al 3 */
     position: relative;
     z-index: 1;
   }
@@ -478,7 +569,9 @@ nav a.ul-active {
   color: white;
 }
 
-.carousel-wrapper button:hover { opacity: 0.7; }
+.carousel-wrapper button:hover {
+  opacity: 0.7;
+}
 
 .carousel {
   flex-shrink: 0;
@@ -521,7 +614,9 @@ nav a.ul-active {
 
 /* --- Breakpoints --- */
 @media (max-width: 1200px) {
-  .navbar { padding: 0.8rem 2rem; }
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
 }
 
 /* Tablet / laptop */
@@ -551,21 +646,22 @@ nav a.ul-active {
     clip-path: none;
   }
 
-  .right-panel { padding-top: 24px; }
+  .right-panel {
+    padding-top: 24px;
+  }
 
   /* Evita que el logo se encime en móvil/tablet: ahora fluye entre paneles */
-  .hero-image {
+  .parrot-sticker {
     position: relative;
-    left: auto;
+    left: -12rem;
     top: auto;
-    transform: none;
-    width: 100%;
     display: flex;
     justify-content: center;
+    transform: translateX(350%);
     margin-top: calc(var(--hero-avatar) * -0.5);
     margin-bottom: calc(var(--hero-avatar) * -0.5);
   }
-
+  
   /* En tablet/phone NO mostramos el abanico */
   .fan-sticker {
     display: none !important;
@@ -575,14 +671,18 @@ nav a.ul-active {
 
 /* --- Telefono --- */
 @media (max-width: 560px) {
-  .navbar { padding: 0.8rem 1.2rem; }
+  .navbar {
+    padding: 0.8rem 1.2rem;
+  }
 
   .impact-stats {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
-  .impact-divider { display: none; }
+  .impact-divider {
+    display: none;
+  }
 
   /* En teléfono NO mostramos el abanico */
   .fan-sticker {
@@ -614,9 +714,17 @@ nav a.ul-active {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   }
 
-  .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-  .hamburger.active .bar:nth-child(2) { opacity: 0; }
-  .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
 
   .nav-menu {
     position: fixed;
@@ -633,7 +741,9 @@ nav a.ul-active {
     overflow-y: auto;
   }
 
-  .nav-menu.active { right: 0; }
+  .nav-menu.active {
+    right: 0;
+  }
 
   .nav-links {
     flex-direction: column;
@@ -653,7 +763,9 @@ nav a.ul-active {
     gap: 1.5rem;
   }
 
-  .desktop-actions { display: none; }
+  .desktop-actions {
+    display: none;
+  }
 
   .mobile-icons {
     font-size: 1.8rem;
@@ -683,8 +795,8 @@ nav a.ul-active {
   visibility: visible;
 }
 
-@media (min-width: 901px){
-  .right-panel{
-    padding-left: clamp(145px, 3vw, 60px); 
+@media (min-width: 901px) {
+  .right-panel {
+    padding-left: clamp(145px, 3vw, 60px);
   }
 }
