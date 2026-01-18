@@ -4,7 +4,7 @@
   "rewrites": [
     {
       "source": "/about.us",
-      "destination": "/src/views/about.us"
+      "destination": "/src/views/about_us"
     },
     {
       "source": "/community",
