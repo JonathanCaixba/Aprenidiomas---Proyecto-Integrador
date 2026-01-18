@@ -48,7 +48,7 @@ Este proyecto utiliza **Vite** para garantizar una experiencia de desarrollo ins
 | **Vanilla JS** | Programación lógica y manipulación del DOM. |
 | **CSS3 Moderno** | Flexbox y Grid para maquetación avanzada. |
 | **Java 8** | *Próximamente:* Implementación de API RESTful con Spring Boot. |
-| **Netlify** | Automatización de despliegues y hosting. |
+| **Vercel** | Automatización de despliegues y hosting. |
 
 ---
 
