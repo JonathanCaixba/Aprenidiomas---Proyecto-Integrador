@@ -7,6 +7,10 @@
       "destination": "/src/views/about_us"
     },
     {
+      "source": "/courses",
+      "destination": "/src/views/courses"
+    },
+    {
       "source": "/community",
       "destination": "/src/views/community"
     },
