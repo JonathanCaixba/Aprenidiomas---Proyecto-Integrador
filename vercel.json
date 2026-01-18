@@ -19,8 +19,8 @@
       "destination": "/src/views/signup"
     },
     {
-      "source": "/work_with_us",
-      "destination": "/src/views/work_with_us"
+      "source": "/work-with-us",
+      "destination": "/src/views/work-with-us"
     },
     {
       "source": "/(.*)",
