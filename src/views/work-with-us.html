@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con nosotras - AprenIdiomas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/work-with-us.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="#">
+                <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../../index.html" data-link>INICIO</a></li>
+                    <li><a href="#" data-link>CURSOS</a></li>
+                    <li><a href="/about_us" class="ul-active" data-link>NOSOTROS</a></li>
+                    <li><a href="/community" data-link>COMUNIDAD</a></li>
+                    <li><a href="#" data-link>TESTIMONIOS</a></li>
+                    <li><a href="/contact_us" data-link>CONTACTO</a></li>
+                    <li><a href="#" data-link>FAQ</a></li>
+
+                    <li class="mobile-actions">
+                        <a href="/signup">
+                            <button class="btn-enroll">¡Inscríbete!</button>
+                        </a>
+                        <div class="icons-nav mobile-icons">
+                            <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-actions desktop-actions">
+            <a href="/signup">
+                <button class="btn-enroll">¡Inscríbete!</button>
+            </a>
+            <div class="icons-nav">
+                <span class="icon-user">👤</span> <span class="icon-cart">🛒</span>
+            </div>
+        </div>
+    </header>
+    <div class="menu-overlay"></div>
+    <!-- FIN Navbar -->
+    <section class="split-layout">
+
+        <section class="visual-panel">
+            <div class="section1">
+                <div class="img-container top-pic">
+                    <img src="../assets/images/profesora_audifonos.jpg" alt="Profesora">
+                </div>
+                <div class="yellow-wedge-container">
+                    <div class="yellow-wedge">
+
+                        <div class="wedge-content">
+                            <div class="titles-wrapper">
+                                <p class="font-light">Trabaja con</p>
+                                <h2 class="font-bold">NOSOTRAS</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+                <div class="img-container1 bottom-pic">
+                </div>
+            </div>
+        </section>
+
+        <div class="fish-asian-sticker">
+            <img src="../assets/images/fishAsian.png" alt="Peces Koi">
+        </div>
+
+
+
+        <div class="form-panel">
+            <div class="form-inner-box">
+                <p class="intro-desc">
+                    Súmate a AprenIdiomas y enseña en una comunidad educativa joven, cercana y apasionada por los
+                    idiomas y la cultura asiática.
+                </p>
+
+                <form class="recruit-form">
+                    <div class="input-wrap">
+                        <input type="text" placeholder="Nombre" required>
+                    </div>
+                    <div class="input-wrap">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-wrap">
+                        <label for="cv-file" class="file-custom-btn">
+                            <span>Subir cv</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </label>
+                        <input type="file" id="cv-file" hidden>
+                    </div>
+
+                    <div class="input-wrap">
+                        <textarea placeholder="Mensaje" rows="5"></textarea>
+                    </div>
+
+                    <button type="submit" class="register-btn">Registrarme</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer -->
+    <footer class="main-footer">
+        <a href="#">Términos y Condiciones | Aviso de Privacidad | © 2026 Aprenidiomas - Powered by NaN</a>
+    </footer>
+    <!-- FIN Footer -->
+
+    <script src="..//js/animations_Home.js" type="module"></script>
+
+</body>
+
+</html>

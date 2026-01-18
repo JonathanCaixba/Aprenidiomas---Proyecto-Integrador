@@ -10,6 +10,7 @@ export default defineConfig({
         community: resolve(__dirname, 'src/views/community.html'),
         contact: resolve(__dirname, 'src/views/contact_us.html'),
         signup: resolve(__dirname, 'src/views/signup.html'),
+        work_with_us: resolve(__dirname, 'src/views/work-with-us.html'),
       },
     },
   },

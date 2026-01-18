@@ -19,6 +19,10 @@
       "destination": "/src/views/signup"
     },
     {
+      "source": "/work_with_us",
+      "destination": "/src/views/work_with_us"
+    },
+    {
       "source": "/(.*)",
       "destination": "/"
     }
