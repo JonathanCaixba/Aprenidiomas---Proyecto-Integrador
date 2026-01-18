@@ -4,6 +4,13 @@
 
 ---
 
+[![Generation Mexico](https://img.shields.io/badge/Bootcamp-Generation_M%C3%A9xico-red?style=for-the-badge)](https://mexico.generation.org/)
+[![Vercel](https://img.shields.io/badge/bundler-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Vercel Status](https://vercelbadge.vercel.app/api/JonathanCaixba/Aprenidiomas---Proyecto-Integrador)](https://aprenidiomas-proyecto-integrador.vercel.app/)
+[![JS](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)]()
+
+---
+
 ## 📑 Tabla de contenidos
 - [Resumen rápido](#-resumen-rápido)
 - [Funcionalidades Clave](#-funcionalidades-clave)
@@ -58,6 +65,7 @@ Este proyecto utiliza **Vite** para garantizar una experiencia de desarrollo ins
 ├─ index.html             # Punto de entrada de la aplicación
 ├─ package.json           # Dependencias y scripts de Vite
 ├─ vite.config.js         # Configuración avanzada del servidor
+├─ vercel.json            # Configuración para las redirecciones
 ├─ .gitignore             # Archivos excluidos de Git
 └─ README.md              # Documentación técnica
 ```
