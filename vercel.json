@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/about.us",
+      "source": "/about_us",
       "destination": "/src/views/about_us"
     },
     {
@@ -11,8 +11,8 @@
       "destination": "/src/views/community"
     },
     {
-      "source": "/contact.us",
-      "destination": "/src/views/contact.us"
+      "source": "/contact_us",
+      "destination": "/src/views/contact_us"
     },
     {
       "source": "/signup",
