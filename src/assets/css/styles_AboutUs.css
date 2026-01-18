@@ -40,7 +40,7 @@ body {
   width: 100%;
 }
 
-/* --- Navbar (tu código casi igual) --- */
+/* --- Navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
