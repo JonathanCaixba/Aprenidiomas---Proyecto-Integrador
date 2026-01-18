@@ -2,3 +2,4 @@
 /community     /src/views/community.html     200
 /contact_us    /src/views/contact_us.html    200
 /signup        /src/views/signup.html        200
+/courses       /src/views/courses.html       200
