@@ -460,8 +460,8 @@ nav a.ul-active {
 
     .intro-desc {
         font-size: 1.3rem;
-        text-align: right; /* Alineación PC */
-        margin-bottom: 3rem;
+        text-align: left; /* Alineación PC */
+        margin-bottom: 2rem;
         padding-left: 2rem;
     }
 
@@ -469,7 +469,7 @@ nav a.ul-active {
         font-size: 1.2rem;
         padding: 1rem 3.5rem;
     }
-}
+ }
 
 /* --- RESPONSIVIDAD ASISTIDA CON IA (Tablet/Móvil) --- */
 /* Sección Navbar */
