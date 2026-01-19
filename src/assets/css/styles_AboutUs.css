@@ -137,6 +137,11 @@ nav a.ul-active {
     border-bottom: 2px solid var(--pink-shadow);
     padding-bottom: 4px;
 }
+.cart-link {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer;
+}
 
 
 .nav-actions {

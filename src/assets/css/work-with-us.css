@@ -150,6 +150,11 @@ nav a.ul-active {
     gap: 1.5rem;
     flex-shrink: 0;
 }
+.cart-link {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer;
+}
 
 /* Botón Inscribirse */
 .btn-enroll {
