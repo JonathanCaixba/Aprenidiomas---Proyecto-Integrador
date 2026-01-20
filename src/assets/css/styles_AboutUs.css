@@ -959,6 +959,7 @@ nav a.ul-active {
 .mobile-icons {
     gap: 2.5rem;
 }
+/* FIN Responsividad Navbar */
 
 @media (min-width: 901px) {
   .right-panel {

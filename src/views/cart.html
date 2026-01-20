@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabaja con nosotras - AprenIdiomas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
+    
+    <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/cart.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo-container">
+            <a href="#">
+                <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../../index.html" data-link>INICIO</a></li>
+                    <li><a href="/courses" data-link>CURSOS</a></li>
+                    <li><a href="/about_us" data-link>NOSOTROS</a></li>
+                    <li><a href="/community" data-link>COMUNIDAD</a></li>
+                    <li><a href="#" data-link>TESTIMONIOS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-trigger" data-link>CONTACTO <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/contact_us" data-link>Ir a Contacto</a></li>
+                            <li><a href="/work-with-us" data-link>Trabaja con nosotras</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-link>FAQ</a></li>
+
+                    <li class="mobile-actions">
+                        <a href="/signup">
+                            <button class="btn-enroll">¡Inscríbete!</button>
+                        </a>
+                        <div class="icons-nav mobile-icons">
+                            <a href="/login" class="icon-btn">
+                                <img src="../assets/icons/USERICON.svg" alt="Perfil" />
+                            </a>
+                            <a href="/cart" class="icon-btn cart" class="ul-active">
+                                <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Carrito" />
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="nav-actions desktop-actions">
+            <a href="/signup">
+                <button class="btn-enroll">¡Inscríbete!</button>
+            </a>
+            <div class="icons-nav">
+                <a href="/login" class="icon-btn">
+                    <img src="../assets/icons/USERICON.svg" alt="Perfil" />
+                </a>
+                <a href="/cart" class="icon-btn cart">
+                    <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Carrito" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="menu-overlay"></div>
+    <!-- FIN Navbar -->
+        <main class="cart-view-container">
+            
+            <div class="cart-header-title">
+                <h2>TU CARRITO</h2>
+                <p>1 Curso en tu carrito</p>
+            </div>
+
+            <div class="cart-split-layout">
+                
+                <div class="cart-items-panel">
+                    
+                    <div class="cart-item-row">
+                        <div class="item-info">
+                            <span class="fi fi-kr"></span>
+                            <span class="item-name">Coreano desde Cero</span>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price-tag">$0,000<span class="currency-code">MX</span></span>
+                            <button class="btn-remove">Remover</button>
+                        </div>
+                    </div>
+
+                    <div class="cart-item-row">
+                        <div class="item-info">
+                            <span class="fi fi-jp"></span>
+                            <span class="item-name">Japonés Esencial</span>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price-tag">$0,000<span class="currency-code">MX</span></span>
+                            <button class="btn-remove">Remover</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cart-summary-panel">
+                    <h3 class="summary-title">Resumen de compra</h3>
+                    
+                    <div class="summary-total-block">
+                        <span class="total-label">Total:</span>
+                        <div class="total-price">
+                            <span class="symbol">$</span>0,000<span class="code">MX</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-pay">
+                        Pagar 
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    
+                    <button class="btn-remove-mobile">Remover</button>
+                </div>
+
+            </div>
+
+            <div class="recommendations-panel">
+                <h3 class="rec-title">Recomendaciones para ti...</h3>
+                
+                <div class="rec-carousel">
+                    
+                    <div class="rec-card">
+                        <div class="rec-img-wrapper">
+                            <img src="../assets/images/goldcat-courses.jpg" alt="Japonés">
+                        </div>
+                        <div class="rec-footer">
+                            <span class="fi fi-jp"></span>
+                            <span class="rec-name">Japonés Esencial</span>
+                        </div>
+                    </div>
+
+                    <div class="rec-card">
+                        <div class="rec-img-wrapper">
+                            <img src="../assets/images/rec5.jpg" alt="Chino">
+                        </div>
+                        <div class="rec-footer">
+                            <span class="fi fi-cn"></span>
+                            <span class="rec-name">Chino Mandarín</span>
+                        </div>
+                    </div>
+
+                    <div class="rec-card">
+                        <div class="rec-img-wrapper">
+                            <img src="../assets/images/pensmanga-courses.jpg" alt="Dibujo">
+                        </div>
+                        <div class="rec-footer">
+                            <span class="flag-icon">✏️</span>
+                            <span class="rec-name">Dibujo Manga</span>
+                        </div>
+                    </div>
+
+                    <div class="rec-card">
+                        <div class="rec-img-wrapper">
+                            <img src="../assets/images/rec4.jpg" alt="Lectura">
+                        </div>
+                        <div class="rec-footer">
+                            <span class="flag-icon">📖</span>
+                            <span class="rec-name">Lectura Manga</span>
+                        </div>
+                    </div>
+
+                    <div class="rec-card">
+                        <div class="rec-img-wrapper">
+                            <img src="../assets/images/rec2.jpg" alt="Traducción">
+                        </div>
+                        <div class="rec-footer">
+                            <span class="flag-icon">✍️</span>
+                            <span class="rec-name">Traducción</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+    
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <a href="#">Términos y Condiciones | Aviso de Privacidad | © 2026 Aprenidiomas - Powered by NaN</a>
+    </footer>
+    <!-- FIN Footer -->
+
+    <script src="../../src/js/animations_About.js"></script>
+    
+</body>
+</html>

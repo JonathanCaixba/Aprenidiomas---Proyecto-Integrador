@@ -1,0 +1,879 @@
+:root {
+    --light-yellow: #f1e3b4;
+    --white: #ffffff;
+    --yellow: #e8c86a;
+    --teal: #5aaaba;
+    --light-blue: #a3d4df;
+    --light-pink: #e9a5b4;
+    --pink: #d35a78;
+    --pink-shadow: #ff134e;
+    --gray: #595757;
+    --light-green: #e8e9c9;
+    --black: #000000;
+    --darkred: #8b0000;
+    --background: var(--white);
+    --blue-marine: #2a3b8f;
+    --yellow-shadow: #ffdd57;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos globales */
+html, body {
+    font-family: 'Geom', sans-serif;
+    background-color: var(--background);
+    color: var(--black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Navbar --- */
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 4rem;
+    background-color: white;
+    /* border-bottom: 3px solid var(--pink); Linea delgada en la parte baja*/
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-actions {
+    display: none;
+}
+
+/* Mostramos las acciones de la barra superior */
+.desktop-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Ocultamos elementos móviles por defecto */
+.hamburger,
+.mobile-actions,
+.menu-overlay {
+    display: none;
+}
+
+/* Animación de rebote del Logo */
+@keyframes logo-bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    50% {
+        transform: scale(0.9) rotate(5deg);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+}
+
+.animate-logo {
+    animation: logo-bounce 0.8s ease-in-out;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--teal);
+    text-decoration: none;
+    font-family: 'Geom', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+nav a.ul-active {
+    color: var(--pink-shadow);
+    font-weight: bold;
+    border-bottom: 2px solid var(--pink-shadow);
+    padding-bottom: 4px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+}
+
+/* Botón Inscribirse */
+.btn-enroll {
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px 20px 20px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enroll:hover {
+    background-color: var(--light-pink);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón Cursos */
+.btn-courses {
+    background-color: var(--pink);
+    color: var(--white);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-courses:hover {
+    background-color: var(--pink-shadow);
+    transform: scale(1.05);
+    box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.icons-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Estilos para los iconos de usuario y carrito */
+.icon-btn {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.icon-btn:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.1);
+}
+
+/* --- Estilos para el Menú en Cascada y Triángulo Animado ASISITDO CON IA --- */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* El contenedor principal del submenú */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+
+    list-style: none;
+    padding: 0.8rem 0;
+    margin: 0.4rem;
+    border-radius: 15px;
+    border-top: 3px solid var(--pink);
+    z-index: 1001;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+}
+
+/* --- Animación del Triángulo --- */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    /* Estado inicial: invisible, pequeño y movido */
+    transform: translateX(-50%) translateY(5px) scale(0);
+    opacity: 0;
+
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--pink);
+
+    /* Transición suave para el triángulo */
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Mostrar contenedor y triángulo al hacer hover */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown:hover .dropdown-menu::before {
+    opacity: 1; /* Estado final: posición original y tamaño normal */
+    transform: translateX(-50%) translateY(0) scale(1);
+    transition-delay: 0.1s; /* Aparece justo después de empezar a mostrarse el menú */
+}
+
+/* --- Elementos de la lista (Vertical) --- */
+.dropdown-menu li {
+    width: 100%; /* Ocupa todo el ancho para apilarse */
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-menu li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Retrasos para el efecto cascada */
+.dropdown-menu li:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+.dropdown-menu li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.dropdown-menu li:nth-child(3) {
+    transition-delay: 0.25s;
+}
+
+.dropdown-menu li:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+/* Enlaces */
+.dropdown-menu li a {
+    color: var(--teal);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    /* Asegura que el enlace sea un bloque completo */
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--light-pink);
+    color: var(--pink-shadow);
+    padding-left: 25px;
+}
+
+/* --- FIN Navbar --- */
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--white);
+    font-size: 12px;
+}
+
+.main-footer a {
+    color: var(--blue-marine);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+    color: var(--teal);
+}
+/* --- FIN Footer --- */ 
+
+/* --- Checkout Cart Styles --- */
+.cart-link {
+    text-decoration: none;
+    color: inherit; 
+    cursor: pointer;
+}
+
+.cart-view-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header-title {
+    padding: 2rem 5%;
+    background-color: var(--white);
+}
+
+.cart-header-title h2 {
+    color: var(--blue-marine);
+    font-family: 'Geom', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.cart-header-title p {
+    color: var(--teal);
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cart-split-layout {
+    display: flex;
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 1%;
+}
+
+.cart-items-panel {
+    width: 64%;
+    margin-right: 1%;
+    background-color: var(--pink);
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    color: var(--white);
+    font-family: 'Questrial', sans-serif;
+}
+
+.cart-item-row:last-child {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.item-pricing {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.price-tag {
+    color: var(--blue-marine);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.currency-code {
+    font-size: 0.7em;
+    margin-left: 2px;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-family: 'Questrial', sans-serif;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-summary-panel {
+    width: 35%;
+    background-color: var(--teal);
+    padding: 4rem 3rem;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.summary-title {
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--white);
+    padding-bottom: 5px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.summary-total-block {
+    margin-bottom: 2rem;
+}
+
+.total-label {
+    display: block;
+    font-family: 'Questrial', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.total-price {
+    font-family: 'Questrial', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.symbol {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.code {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-weight: normal;
+}
+
+.btn-pay {
+    background-color: var(--yellow);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-family: 'Geom', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.btn-pay:hover {
+    transform: scale(1.05);
+    background-color: var(--yellow-shadow);
+}
+
+.btn-remove-mobile {
+    display: none;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    margin-top: 1rem;
+    font-family: 'Questrial', sans-serif;
+    cursor: pointer;
+}
+
+.recommendations-panel {
+    background-color: var(--yellow);
+    padding: 3rem 5%;
+    width: 100%;
+}
+
+.rec-title {
+    color: var(--blue-marine);
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.rec-carousel {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.rec-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rec-img-wrapper {
+    width: 80%;
+    aspect-ratio: 18/10;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.rec-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rec-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    font-family: 'Questrial', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+}
+/* Responsividad Navbar */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
+
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+
+    /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+    .mobile-actions {
+        display: flex;
+        /* O block, según prefieras */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        /* Separación de los links */
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+        /* Línea separadora elegante */
+        gap: 1.5rem;
+    }
+
+    /* 2. Y OCULTAMOS las acciones de la barra superior para que no se dupliquen */
+    .desktop-actions {
+        display: none;
+    }
+
+    /* Ajuste visual para los iconos en móvil */
+    .mobile-icons {
+        font-size: 1.8rem;
+        gap: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* 3. Overlay (Fondo oscuro) */
+.menu-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+}
+
+.mobile-icons {
+    gap: 2.5rem;
+}
+
+/* --- FIN Responsividad Navbar --- */
+
+@media (max-width: 992px) {
+    .cart-split-layout {
+        flex-direction: column;
+    }
+    .cart-items-panel{
+        margin-bottom: 3%;
+    }
+    .cart-summary-panel{
+        margin-bottom: 2%;
+    }
+
+    .cart-items-panel {
+        width: 100%;
+        padding: 3rem 5%;
+    }
+
+    .btn-remove {
+        display: none; 
+    }
+
+    .cart-summary-panel {
+        width: 100%;
+        padding: 3rem 5%;
+    }
+
+    .summary-title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-remove-mobile {
+        display: block;
+    }
+
+    .recommendations-panel {
+        padding: 2rem 0 2rem 5%; 
+        overflow: hidden; 
+    }
+
+    .rec-carousel {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-right: 5%; 
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .rec-card {
+        min-width: 260px;
+        scroll-snap-align: center;
+    }
+    
+    .rec-carousel::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .rec-carousel::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.3);
+        border-radius: 3px;
+    }
+    
+    .rec-carousel::-webkit-scrollbar-thumb {
+        background: var(--blue-marine);
+        border-radius: 3px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0.8rem 1.5rem;
+        /* Padding reducido */
+    }
+
+    /* Ocultamos las acciones de escritorio */
+    .desktop-only {
+        display: none;
+    }
+
+    /* 1. Botón Hamburguesa */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        /* Encima de todo */
+        padding: 0;
+    }
+
+    .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--pink);
+        border-radius: 3px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    /* Animación Cruz (X) perfecta */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+        /* La del medio desaparece */
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* 2. El Menú Lateral (Drawer) */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Escondido a la derecha */
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: white;
+        padding: 6rem 2rem 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+        /* Permite scroll si el menú es muy alto */
+    }
+
+    .nav-menu.active {
+        right: 0;
+        /* Entra a la pantalla */
+    }
+
+    /* Estilos de enlaces en móvil */
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        /* Centrados o flex-start */
+        gap: 2rem;
+        font-size: 1.1rem;
+    }
+}
