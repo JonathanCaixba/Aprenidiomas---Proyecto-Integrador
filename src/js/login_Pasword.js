@@ -1,6 +1,6 @@
 (() => {
   const init = () => {
-    // Toggle mostrar/ocultar contrasena (ojo con slash)
+    // Toggle mostrar/ocultar contraseña (ojo con slash)
     const pwInput = document.querySelector('.pasword-input');
     const toggleBtn = document.querySelector('.toggle-password');
 

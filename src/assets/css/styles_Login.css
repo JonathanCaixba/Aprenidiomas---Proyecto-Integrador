@@ -56,14 +56,14 @@ html, body {
     gap: 1.5rem;
 }
 
-/* Ocultamos elementos móviles por defecto */
+/* Ocultamos elementos moviles por defecto */
 .hamburger,
 .mobile-actions,
 .menu-overlay {
     display: none;
 }
 
-/* Animación de rebote del Logo */
+/* Animacion de rebote del Logo */
 @keyframes logo-bounce {
 
     0%,
@@ -136,7 +136,7 @@ nav a.ul-active {
     flex-shrink: 0;
 }
 
-/* Botón Inscribirse */
+/* Boton Inscribirse */
 .btn-enroll {
     background-color: var(--teal);
     color: var(--white);
@@ -156,7 +156,7 @@ nav a.ul-active {
     box-shadow: 3px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Botón Cursos */
+/* Boton Cursos */
 .btn-courses {
     background-color: var(--pink);
     color: var(--white);
@@ -180,23 +180,31 @@ nav a.ul-active {
     gap: 1.5rem;
     font-size: 1.5rem;
 }
+
 /* --- FIN Navbar --- */
 
-/* --- Login ---*/
 
+/* ==============================
+   LOGIN (DESKTOP)
+   ============================== */
+
+/* Fondo blanco para el login (sin tocar navbar/footer) */
 body{
     background-color: var(--white);
 }
 
 .login-main{
     flex: 1;
+    /* Sin padding: sin margenes (ni vertical ni horizontal) */
     padding: 0;
 }
 
 .login-layout{
     width: 100%;
+    /* Sin margenes laterales: que ocupe todo el ancho */
     max-width: none;
     margin: 0;
+    /* Mas compacto para evitar scroll enorme (en desktop) */
     height: clamp(480px, 62vh, 680px);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -208,7 +216,11 @@ body{
 .left-panels{
     display: grid;
     grid-template-rows: 1.15fr 0.85fr;
+
+    /* antes: gap: clamp(10px, 1.6vw, 16px);  */
+    /* ahora: el doble aprox (controlado para no explotar en 4K) */
     row-gap: clamp(18px, 1.2vw, 26px);
+
     min-height: 0;
 }
 
@@ -219,6 +231,7 @@ body{
     min-height: 0;
 }
 
+/* IMPORTANTE: quita el 80% para que no deje “aire” */
 .top-left-panel-img{
     width: 100%;
     height: 100%;
@@ -269,7 +282,8 @@ body{
     display: block;
 }
 
-/* --- Panel Inicio de Sesión (derecha) --- */
+
+/* --- Panel Inicio de Sesion (derecha) --- */
 .panel-de-inicio-de-sesion{
     background: var(--pink);
     display: flex;
@@ -346,6 +360,7 @@ body{
     color: rgba(255, 255, 255, 0.85);
 }
 
+/* Oculta el "ojo" nativo de algunos navegadores (evita doble icono) */
 .pasword-input::-ms-reveal,
 .pasword-input::-ms-clear{
     display: none;
@@ -435,6 +450,7 @@ body{
     color: var(--light-blue);
 }
 
+
 /* --- Footer --- */
 .main-footer {
     text-align: center;
@@ -456,10 +472,11 @@ body{
 /* --- FIN Footer --- */
 
 /* --- RESPONSIVIDAD --- */
-/* Sección Navbar */
+/* Seccion Navbar */
 @media (max-width: 992px) {
     .navbar {
         padding: 0.8rem 1.5rem;
+        /* Padding reducido */
     }
 
     /* Ocultamos las acciones de escritorio */
@@ -467,7 +484,7 @@ body{
         display: none;
     }
 
-    /* 1. Botón Hamburguesa */
+    /* 1. Boton Hamburguesa */
     .hamburger {
         display: flex;
         flex-direction: column;
@@ -490,7 +507,7 @@ body{
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
     }
 
-    /* Animación Cruz (X) perfecta */
+    /* Animacion Cruz (X) perfecta */
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
@@ -504,7 +521,7 @@ body{
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* 2. El Menú Lateral (Drawer) */
+    /* 2. El Menu Lateral (Drawer) */
     .nav-menu {
         position: fixed;
         top: 0;
@@ -519,7 +536,7 @@ body{
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1001;
         overflow-y: auto;
-        /* Permite scroll si el menú es muy alto */
+        /* Permite scroll si el menu es muy alto */
     }
 
     .nav-menu.active {
@@ -527,7 +544,7 @@ body{
         /* Entra a la pantalla */
     }
 
-    /* Estilos de enlaces en móvil */
+    /* Estilos de enlaces en movil */
     .nav-links {
         flex-direction: column;
         align-items: center;
@@ -538,18 +555,18 @@ body{
 
 
 
-    /* 1. Ahora MOSTRAMOS las acciones dentro del menú desplegable */
+    /* 1. Ahora MOSTRAMOS las acciones dentro del menu desplegable */
     .mobile-actions {
         display: flex;
-        /* O block, según prefieras */
+        /* O block, segun prefieras */
         flex-direction: column;
         align-items: center;
         width: 100%;
         margin-top: 2rem;
-        /* Separación de los links */
+        /* Separacion de los links */
         padding-top: 2rem;
         border-top: 1px solid #eee;
-        /* Línea separadora elegante */
+        /* Linea separadora elegante */
         gap: 1.5rem;
     }
 
@@ -558,7 +575,7 @@ body{
         display: none;
     }
 
-    /* Ajuste visual para los iconos en móvil */
+    /* Ajuste visual para los iconos en movil */
     .mobile-icons {
         font-size: 1.8rem;
         gap: 2rem;
@@ -589,6 +606,7 @@ body{
 }
 
 /* --- FIN Responsividad Navbar --- */
+
 
 /* --- Responsividad de escritorio ---  */
 /* --- Vista 2k --- */
@@ -664,3 +682,128 @@ body{
 /*Fin de Responsividad de escritorio*/
 
 /*Responsividad en dispositivos*/
+/*Pantallas de Telefono*/
+@media (max-width: 480px){
+    .login-layout{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "login"
+            "left";
+        height: auto;
+        gap: 0;
+    }
+
+    .panel-de-inicio-de-sesion{
+        grid-area: login;
+        padding: 28px 18px 34px;
+    }
+
+    .left-panels{
+        grid-area: left;
+        grid-template-rows: auto auto;
+        row-gap: clamp(16px, 4.5vw, 26px);
+    }
+
+    .top-left-panels{
+        height: clamp(220px, 60vw, 320px);
+    }
+
+    .bottom-left-panel{
+        height: clamp(170px, 44vw, 240px);
+    }
+
+    .top-left-panel-img{
+        clip-path: polygon(0 0, 99% 0, 95% 100%, 0 100%);
+    }
+
+    .top-left-text-panel{
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 4% 100%);
+        padding: clamp(14px, 4.4vw, 22px);
+        padding-left: clamp(18px, 5.2vw, 28px);
+    }
+
+    .aprende-text{
+        max-width: 90%;
+        margin-left: 0;
+    }
+
+    .aprende-text p{
+        font-size: clamp(18px, 4.4vw, 22px);
+    }
+
+    .aprende-text p span{
+        font-size: clamp(22px, 5.4vw, 28px);
+    }
+
+    .login-container{
+        width: min(360px, 92%);
+    }
+
+    .logo-samurai{
+        width: clamp(70px, 20vw, 96px);
+    }
+
+    .iniciar-sesion-text{
+        font-size: clamp(24px, 7vw, 32px);
+    }
+
+    .inputs-stack{
+        gap: 14px;
+    }
+
+    .contenedor-correo,
+    .pasword-container{
+        height: 42px;
+    }
+
+    .continuar-boton{
+        width: min(260px, 78%);
+    }
+
+    .login-links{
+        font-size: 11px;
+    }
+}
+
+/*Tablets y iPads*/
+@media (min-width: 481px) and (max-width: 1024px){
+    .login-layout{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "login"
+            "left";
+        height: auto;
+        gap: 0;
+    }
+
+    .panel-de-inicio-de-sesion{
+        grid-area: login;
+        padding: clamp(24px, 4vw, 44px) clamp(18px, 4vw, 44px);
+    }
+
+    .left-panels{
+        grid-area: left;
+        grid-template-rows: auto auto;
+        row-gap: clamp(18px, 3vw, 30px);
+    }
+
+    .top-left-panels{
+        height: clamp(260px, 32vw, 380px);
+    }
+
+    .bottom-left-panel{
+        height: clamp(210px, 26vw, 300px);
+    }
+
+    .top-left-panel-img{
+        clip-path: polygon(0 0, 98.7% 0, 93.5% 100%, 0 100%);
+    }
+
+    .top-left-text-panel{
+        clip-path: polygon(12% 0, 100% 0, 100% 100%, 4% 100%);
+    }
+
+    .login-container{
+        width: min(440px, 92%);
+    }
+}
