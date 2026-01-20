@@ -264,14 +264,17 @@ nav a.ul-active {
 }
 
 .dropdown:hover .dropdown-menu::before {
-    opacity: 1; /* Estado final: posición original y tamaño normal */
+    opacity: 1;
+    /* Estado final: posición original y tamaño normal */
     transform: translateX(-50%) translateY(0) scale(1);
-    transition-delay: 0.1s; /* Aparece justo después de empezar a mostrarse el menú */
+    transition-delay: 0.1s;
+    /* Aparece justo después de empezar a mostrarse el menú */
 }
 
 /* --- Elementos de la lista (Vertical) --- */
 .dropdown-menu li {
-    width: 100%; /* Ocupa todo el ancho para apilarse */
+    width: 100%;
+    /* Ocupa todo el ancho para apilarse */
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
@@ -859,6 +862,7 @@ nav a.ul-active {
         width: 640px;
     }
 }
+
 /* Sección Navbar */
 @media (max-width: 992px) {
     .navbar {
@@ -991,13 +995,13 @@ nav a.ul-active {
 }
 
 .icon-btn {
-        width: 36px;
-        height: 36px;
-    }
+    width: 36px;
+    height: 36px;
+}
 
-    .mobile-icons {
-        gap: 2.5rem;
-    }
+.mobile-icons {
+    gap: 2.5rem;
+}
 
 /* --- FIN Responsividad Navbar --- */
 
