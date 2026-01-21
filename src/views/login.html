@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About_Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Questrial&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/midorima-personal-use" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/gang-of-three" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geom:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles_TyC.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="../../index.html">
+        <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
+      </a>
+    </div>
+
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <div class="nav-menu" id="main-menu">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../../index.html" data-link>INICIO</a></li>
+          <li><a href="/courses" data-link>CURSOS</a></li>
+          <li><a href="/about_us" data-link>NOSOTROS</a></li>
+          <li><a href="/community" data-link>COMUNIDAD</a></li>
+          <li><a href="#" data-link>TESTIMONIOS</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-trigger" data-link>CONTACTO <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/contact_us" data-link>Contáctanos</a></li>
+              <li><a href="/work-with-us" data-link>Trabaja con nosotras</a></li>
+            </ul>
+          </li>
+          <li><a href="#" data-link>FAQ</a></li>
+
+          <li class="mobile-actions">
+            <a href="/signup">
+              <button class="btn-enroll">¡Inscríbete!</button>
+            </a>
+            <div class="icons-nav mobile-icons">
+              <a href="/login" class="icon-btn">
+                <img src="../assets/icons/USERICON.svg" alt="Perfil" />
+              </a>
+              <a href="/cart" class="icon-btn cart">
+                <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Carrito" />
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-actions desktop-actions">
+      <a href="/signup">
+        <button class="btn-enroll">¡Inscríbete!</button>
+      </a>
+      <div class="icons-nav">
+        <a href="/login" class="icon-btn">
+          <img src="../assets/icons/USERICON.svg" alt="Perfil" />
+        </a>
+        <a href="/cart" class="icon-btn cart">
+          <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Carrito" />
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay"></div>
+  <!-- FIN Navbar -->
+
+  <!-- Login (Desktop) -->
+  <main class="login-main">
+    <section class="login-layout">
+      <!-- Paneles Izquierdos -->
+      <div class="left-panels">
+        <!-- 2 paneles superiores  -->
+        <div class="top-left-panels">
+          <img class="top-left-panel-img" src="/src/assets/images/student.jpg" alt="Imagen superior izquierda" />
+
+          <div class="top-left-text-panel">
+            <div class="aprende-text">
+              <p>
+                Aprende<br />
+                el idioma<br />
+                <span>¡VIVE LA<br />CULTURA!</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- panel inferior -->
+        <div class="bottom-left-panel">
+          <img class="bottom-left-panel-img" src="/src/assets/images/contact_us.jpg" alt="Imagen inferior izquierda" />
+        </div>
+      </div>
+      <!-- FIN Panel Izquierdo -->
+
+      <!-- Panel Inicio de Sesion -->
+      <aside class="panel-de-inicio-de-sesion">
+        <div class="login-container">
+          <img class="logo-samurai" src="/src/assets/icons/samurai.svg" alt="Logo Samurai" />
+          <h1 class="iniciar-sesion-text">INICIAR SESIÓN</h1>
+
+          <form class="login-form" action="#" method="post">
+            <div class="inputs-stack">
+              <div class="contenedor-correo">
+                <input class="input-correo" type="email" name="email" placeholder="correo electrónico"
+                  autocomplete="email" required />
+              </div>
+
+              <div class="pasword-container">
+                <input class="pasword-input" type="password" name="password" placeholder="contraseña"
+                  autocomplete="current-password" required />
+
+                <button class="toggle-password" type="button" aria-label="Mostrar contraseña" aria-pressed="false">
+                  <span class="icono-ojo" aria-hidden="true">
+                    <svg class="eye" viewBox="0 0 24 24" width="22" height="22">
+                      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                      <circle class="eye-pupil" cx="12" cy="12" r="3" fill="none" stroke="currentColor"
+                        stroke-width="2" />
+                      <path class="eye-slash" d="M4 4l16 16" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <button class="continuar-boton" type="submit">Continuar</button>
+
+            <div class="login-links">
+              <a class="olvidaste-text" href="aqui va lo que sea que vaya a olvidar contraseña">¿Olvidaste tu
+                contraseña?</a>
+              <a class="crea-text" href="/signup">Crear cuenta</a>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <!-- FIN Login (Desktop) -->
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <a href="/TyC">Términos y Condiciones | Aviso de Privacidad | © 2026 Aprenidiomas - Powered by NaN</a>
+  </footer>
+  <!-- FIN Footer -->
+
+  <script src="../js/login_Pasword.js" type="module"></script>
+</body>
+
+</html>

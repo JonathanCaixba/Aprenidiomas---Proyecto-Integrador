@@ -27,6 +27,10 @@
       "destination": "/src/views/work-with-us"
     },
     {
+      "source": "/login",
+      "destination": "/src/views/login"
+    },
+    {
       "source": "/cart",
       "destination": "/src/views/cart"
     },
