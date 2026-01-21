@@ -7,7 +7,7 @@
     "rating": "⭐ 4.8 (1,240 reseñas)",
     "level": "Principiantes",
     "tag": "Más vendido",
-    "image": "./src/assets/images/chinacourses.jpg"
+    "image": "../assets/images/chinacourses.jpg"
   },
   {
     "id": 2,

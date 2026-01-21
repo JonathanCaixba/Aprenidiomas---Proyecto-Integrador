@@ -1,5 +1,7 @@
 const container = document.getElementById("courses-container");
 
+import imageMap from './imageMap.js';  // importa el mapa de imágenes
+
 fetch("courses.json")
   .then(res => res.json())
   .then(courses => {
@@ -8,7 +10,7 @@ fetch("courses.json")
       article.classList.add("course");
 
       article.innerHTML = `
-        <img src="${course.image}" class="courses-img" />
+        <img src="${imageMap[course.image.split('/').pop()]}" class="courses-img" />
         <header>
           <h1 class="course-header">${course.title}</h1>
           <p class="course-description">${course.description}</p>
