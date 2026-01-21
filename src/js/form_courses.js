@@ -1,6 +1,6 @@
 const container = document.getElementById("courses-container");
 
-fetch("../data/courses.json")
+fetch("../public/courses.json")
   .then(res => res.json())
   .then(courses => {
     courses.forEach(course => {
