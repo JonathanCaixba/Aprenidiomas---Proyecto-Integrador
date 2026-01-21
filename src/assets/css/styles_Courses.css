@@ -20,7 +20,7 @@
 html,
 body {
     font-family: 'Geom', sans-serif;
-    background-color: var(--background);
+    background-color: var(--white);
     color: var(--black);
     margin: 0;
     padding: 0;
@@ -581,10 +581,11 @@ section.courses-product-section {
   grid-column: 1 / -1;
   height: 100%;
   background-color: #d35a78;
-  display: flex;
-  flex-direction: row;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: min-content;
   padding: 1rem 0;
+  gap: 1rem;
 }
 
 .course {
@@ -593,10 +594,7 @@ section.courses-product-section {
   padding: 8px;
   gap: 8px;
   color: var(--white);
-  height: 100%;
-  justify-content: space-evenly;
-  flex: 1 1 300px;
-  max-width: 100%;
+  width: 100%;
 }
 .courses-img {
   object-fit: cover;

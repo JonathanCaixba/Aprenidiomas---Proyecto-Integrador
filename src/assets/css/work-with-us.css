@@ -19,7 +19,7 @@
 /* Estilos globales */
 html, body {
     font-family: 'Geom', sans-serif;
-    background-color: var(--background);
+    background-color: var(--white);
     color: var(--black);
     margin: 0;
     padding: 0;

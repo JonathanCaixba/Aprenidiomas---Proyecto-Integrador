@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "🇰🇷 Coreano desde Cero",
+    "description": "Habla, lee y entiende coreano desde el primer día.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.8 (1,240 reseñas)",
+    "level": "Principiantes",
+    "tag": "Más vendido",
+    "image": "../assets/images/dragoncourses.jpg"
+  },
+  {
+    "id": 2,
+    "title": "🇯🇵 Japonés Esencial",
+    "description": "Hiragana, katakana y conversación práctica.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.7 (980 reseñas)",
+    "level": "Principiantes",
+    "tag": "Más vendido",
+    "image": "../assets/images/goldcat-courses.jpg"
+  },
+  {
+    "id": 3,
+    "title": "🇨🇳 Chino Mandarín Básico",
+    "description": "Introducción al mandarín con pinyin, tonos y frases esenciales.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.9 (1,560 reseñas)",
+    "level": "Principiantes",
+    "tag": "Nuevo",
+    "image": "../assets/images/chinacourses.jpg"
+  },
+  {
+    "id": 4,
+    "title": "🇮🇳 Cultura y Lengua Hindi",
+    "description": "Aprende hindi básico y conoce la cultura de la India moderna.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.6 (720 reseñas)",
+    "level": "Principiantes",
+    "tag": "Popular",
+    "image": "../assets/images/indiacourses.jpg"
+  },
+  {
+    "id": 5,
+    "title": "🇹🇭 Tailandés Conversacional",
+    "description": "Frases prácticas y fundamentos del idioma tailandés.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.5 (640 reseñas)",
+    "level": "Principiantes",
+    "tag": "Nuevo",
+    "image": "../assets/images/thailandcourses.webp"
+  },
+  {
+    "id": 6,
+    "title": "🇻🇳 Vietnamita desde Cero",
+    "description": "Pronunciación, vocabulario y cultura vietnamita esencial.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.4 (510 reseñas)",
+    "level": "Principiantes",
+    "tag": "Recomendado",
+    "image": "../assets/images/vietnamcourses.webp"
+  },
+  {
+    "id": 7,
+    "title": "🇨🇳 Cultura China Tradicional",
+    "description": "Historia, costumbres, festividades y filosofía china.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.8 (1,120 reseñas)",
+    "level": "Todos los niveles",
+    "tag": "Más vendido",
+    "image": "../assets/images/chinaculturecourses.jpg"
+  },
+  {
+    "id": 8,
+    "title": "🇯🇵 Cultura Japonesa Moderna",
+    "description": "Anime, tecnología, sociedad y tradiciones actuales de Japón.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.9 (1,890 reseñas)",
+    "level": "Todos los niveles",
+    "tag": "Más vendido",
+    "image": "../assets/images/japanculture.webp"
+  },
+  {
+    "id": 9,
+    "title": "🇰🇷 Cultura Coreana y K-Culture",
+    "description": "K-pop, K-dramas, etiqueta social y estilo de vida coreano.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.8 (1,430 reseñas)",
+    "level": "Todos los niveles",
+    "tag": "Tendencia",
+    "image": "../assets/images/koreanculture.webp"
+  },
+  {
+    "id": 10,
+    "title": "🇲🇳 Introducción a la Cultura Asiática",
+    "description": "Panorama general de las culturas, valores y tradiciones de Asia.",
+    "price": "$0,000 MX",
+    "rating": "⭐ 4.7 (860 reseñas)",
+    "level": "Todos los niveles",
+    "tag": "Recomendado",
+    "image": "../assets/images/asianculture.png"
+  }
+]

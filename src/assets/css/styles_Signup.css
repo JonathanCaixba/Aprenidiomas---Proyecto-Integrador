@@ -20,7 +20,7 @@
 html,
 body {
     font-family: 'Questrial';
-    background-color: white;
+    background-color: var(--white);
     color: var(--black);
     margin: 0;
     padding: 0;
