@@ -31,6 +31,10 @@
       "destination": "/src/views/cart"
     },
     {
+      "source": "/TyC",
+      "destination": "/src/views/TyC"
+    },
+    {
       "source": "/(.*)",
       "destination": "/"
     }
