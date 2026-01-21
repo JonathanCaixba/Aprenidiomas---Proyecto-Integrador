@@ -107,7 +107,7 @@ El proyecto se encuentra en una fase de evolución constante. Nuestras próximas
 
 Este proyecto utiliza un flujo de Integración y Despliegue Continuo para asegurar que la versión en producción siempre sea la más reciente:
 
-- **Hosting:** Netlify.
+- **Hosting:** Vercel.
 - **Automatización:** Cada git push a la rama main dispara automáticamente un nuevo proceso de construcción.
 - **Configuración de Build:**
   - Build Command: npm run build
