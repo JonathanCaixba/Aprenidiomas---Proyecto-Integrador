@@ -18,47 +18,52 @@
 </head>
 
 <body>
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo-container">
-      <a href="../../index.html">
-        <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
-      </a>
-    </div>
-
-    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </button>
-
-    <div class="nav-menu" id="main-menu">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../../index.html" data-link>INICIO</a></li>
-          <li><a href="/courses" data-link>CURSOS</a></li>
-          <li><a href="/about_us" data-link>NOSOTROS</a></li>
-          <li><a href="/community" data-link>COMUNIDAD</a></li>
-          <li><a href="#" data-link>TESTIMONIOS</a></li>
-          <li><a href="/contact_us" class="ul-active" data-link>CONTACTO</a></li>
-          <li><a href="#" data-link>FAQ</a></li>
-
-          <li class="mobile-actions">
-            <a href="/signup">
-              <button class="btn-enroll">¡Inscríbete!</button>
+        <div class="logo-container">
+            <a href="../../index.html">
+                <img src="../assets/icons/AprenIdiomas_LOGO-01.svg" alt="Logo" class="logo">
             </a>
-            <div class="icons-nav mobile-icons">
-              <a href="#">
-                <img src="../assets/icons/USERICON.svg" alt="Logo" class="icon-user">
-              </a>
-              <a href="#">
-                <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Logo" class="icon-cart">
-              </a>
-            </div>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        </div>
+
+        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <div class="nav-menu" id="main-menu">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../../index.html" data-link>INICIO</a></li>
+                    <li><a href="/courses" data-link>CURSOS</a></li>
+                    <li><a href="/about_us" data-link>NOSOTROS</a></li>
+                    <li><a href="/community" data-link>COMUNIDAD</a></li>
+                    <li><a href="#" data-link>TESTIMONIOS</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-trigger" data-link>CONTACTO <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/contact_us" data-link>Ir a Contacto</a></li>
+                            <li><a href="/work-with-us" data-link>Trabaja con nosotras</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-link>FAQ</a></li>
+
+                    <li class="mobile-actions">
+                        <a href="/signup">
+                            <button class="btn-enroll">¡Inscríbete!</button>
+                        </a>
+                        <div class="icons-nav mobile-icons">
+                            <a href="/login" class="icon-btn">
+                                <img src="../assets/icons/USERICON.svg" alt="Perfil" />
+                            </a>
+                            <a href="/cart" class="icon-btn cart">
+                                <img src="../assets/icons/SHOPPINGCARTICON.svg" alt="Carrito" />
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
     <div class="nav-actions desktop-actions">
       <a href="/signup">
