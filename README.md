@@ -11,6 +11,12 @@
 
 ---
 
+## 🧠 ¿Qué problema resuelve?
+Muchas plataformas educativas presentan procesos de compra confusos y experiencias poco optimizadas en dispositivos móviles.  
+**AprenIdiomas** busca simplificar la exploración, selección y adquisición de cursos mediante una interfaz limpia, responsiva y optimizada para rendimiento.
+
+---
+
 ## 📑 Tabla de contenidos
 - [Resumen rápido](#-resumen-rápido)
 - [Funcionalidades Clave](#-funcionalidades-clave)
