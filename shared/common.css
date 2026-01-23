@@ -1,0 +1,91 @@
+
+:root {
+  --light-yellow: #f1e3b4;
+  --white: #ffffff;
+  --yellow: #e8c86a;
+  --teal: #5aaaba;
+  --light-blue: #a3d4df;
+  --light-pink: #e9a5b4;
+  --pink: #d35a78;
+  --pink-shadow: #ff134e;
+  --gray: #595757;
+  --light-green: #e8e9c9;
+  --black: #000000;
+  --darkred: #8b0000;
+  --background: var(--light-yellow);
+  --blue-marine: #2a3b8f;
+  --dark-blue: #30317c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Geom", sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  height: auto;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  flex: 1 1 120px;
+  max-height: 120px;
+}
+
+.main-container {
+  flex: 1;
+  display: grid;
+  min-height: 100dvh;
+}
+
+.footer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.button {
+  padding: .6rem 2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease,box-shadow .2s ease;
+  box-shadow: 0 4px 6px #0000001a;
+  pointer-events: auto;
+}
+
+.button:hover {
+  transform: scale(1.01);
+}
+
+.button.primary {
+  background-color: var(--teal);
+  color: var(--white);
+}
+
+button.button.primary:hover {
+  background-color: var(--light-pink);
+  transform: scale(1.01);
+}
+
+@media (min-width: 768px) {
+  .button.primary {
+    padding: .4rem 2rem;
+  }
+}

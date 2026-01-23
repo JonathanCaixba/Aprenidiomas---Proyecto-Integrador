@@ -1,0 +1,153 @@
+:root {
+  --light-yellow: #f1e3b4;
+  --white: #ffffff;
+  --yellow: #e8c86a;
+  --teal: #5aaaba;
+  --light-blue: #a3d4df;
+  --light-pink: #e9a5b4;
+  --pink: #d35a78;
+  --gray: #595757;
+  --ligth-gray: #aeb6ba;
+  --light-green: #e8e9c9;
+  --black: #000000;
+  --darkred: #8b0000;
+  --background: var(--light-yellow);
+  --blue-marine: #2a3b8f;
+  --dark-blue: #30317c;
+}
+
+nav.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  max-height: 80px;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.logo > img {
+  height: 72px;
+  width: 72px;
+}
+
+.navbar-menu {
+  cursor: pointer;
+}
+.navbar-menu .icon-x {
+  display: none;
+}
+
+.navbar-menu.active .menu {
+  display: none;
+}
+
+.menu,
+.icon-x {
+  stroke: var(--pink);
+}
+
+.icon-circle-user,
+.icon-shopping-cart {
+  stroke: var(--ligth-gray);
+  pointer-events: auto;
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75%;
+  background-color: var(--white);
+  list-style: none;
+  padding: 4rem 2rem;
+  align-items: center;
+  gap: 2rem;
+  height: 100dvh;
+  text-transform: uppercase;
+  max-width: 300px;
+  box-shadow: -15px 0 15px -10px #0000001a;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links.active {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.icon-x {
+  margin-left: auto;
+  position: absolute;
+  top: 32px;
+  right: 1rem;
+}
+
+.nav-links > li {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.nav-links > li:hover {
+  color: var(--pink);
+}
+
+.nav-links > li > a.active {
+  color: var(--pink);
+  font-weight: 700;
+  border-bottom: 2px solid var(--pink);
+  padding-bottom: 4px;
+}
+
+.nav-links > .nav-icons-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-circle-user:hover,
+.icon-shopping-cart:hover {
+  stroke: var(--pink);
+  transform: scale(1.01);
+}
+
+a.active > .icon-circle-user,
+a.active > .icon-shopping-cart {
+  stroke: var(--pink);
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  nav.navbar {
+    justify-content: space-around;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    padding: 0;
+    gap: 2rem;
+    box-shadow: none;
+    height: initial;
+    max-width: initial;
+    transition: none;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav-links > li {
+    font-size: 0.9rem;
+  }
+
+  .icon-x {
+    display: none;
+  }
+}
