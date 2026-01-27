@@ -124,11 +124,10 @@ Este proyecto utiliza un flujo de Integración y Despliegue Continuo para asegur
 ## 👤 Equipo de desarrollo
 | Integrantes: | Roles: | Linkedin:
 | :--- | :--- | :---
-| **Jonathan Caixba** | Por definir | www.linkedin.com/in/jonathan-caixba
+| **Jonathan Caixba** | Scrum Master & Developer | www.linkedin.com/in/jonathan-caixba
 | **Luz Mora** | Por definir |
 | **Gabriela Garay** | Por definir |
 | **Mari Paz** | Por definir |
-| **Enrique Berman** | Por definir |
 | **Johan Peña** | Por definir |
 | **Ángel Bracamontes** | Por definir | www.linkedin.com/in/arturo-bracamontes
 
